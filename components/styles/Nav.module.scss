@@ -1,0 +1,208 @@
+@import '../../styles//variables.module.scss';
+
+
+
+
+.nav{
+    height: $navHeight;
+    width: 100%;
+    background-color: $secondaryDarkColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    // if you want change to fixed you have to change also height in home.module.scss
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    .logo{
+        // width: 50%;
+        height: 100%;
+        width: auto;
+        // height: auto;
+        margin-left: $navMarginMobile;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // background-color: red;
+
+        img{
+            height: 75%;
+            width: auto;
+        }
+
+        h4{
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        
+    }
+
+    .hamburgerContainer{
+        margin-right: $navMarginMobile;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+        
+        .hamburger{
+            position: relative;
+            width: 20px;
+            height: 1px;
+            background-color: $white;
+            transition: .2s;
+            
+            &::before, &::after{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 1px;
+                background-color: $white;
+                transition: .2s;
+            }
+            &::before{
+                top: -9px;
+            }
+            &::after{
+                top: 9px
+            }
+        }
+
+        
+    }
+
+    .activeX{
+        .hamburger{
+            width: 28.3px;
+            transform: rotate(45deg);
+            &::before, &::after{
+                width: 28.3px;
+                top: 0%;
+            }
+            &::before{
+                transform: rotate(90deg);
+            }
+            &::after{
+                top: 0;
+            }
+        }
+    }
+
+    ul{
+        position: absolute;
+        left: 50px;
+        width: 100%;
+        height: calc(100vh - $navHeight);
+        height: calc(100dvh - $navHeight);
+        background-color: $secondaryDarkColor;
+        left: 100vw;
+        transition: .2s;
+        top: $navHeight;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        li{
+            list-style: none;
+            font-size: 22px;
+            position: relative;
+        }
+        
+        .activeLi::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $red;
+            border-radius: 50%;
+            left: 0;
+            bottom: -10px;
+        }
+        
+
+        .line{
+            width: 90%;
+            height: 1px;
+            background-color: $red;
+            border-radius: 50%;
+        }
+
+        p{
+            font-size: 14px;
+            width: 80%;
+        }
+
+        button{
+            display: list-item;
+            width: 180px;
+            height: 46px;
+            background-color: red;
+            border-radius: 10px;
+            border: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 19px 11px;
+
+            img{
+                width: 16px;
+            }
+
+            span{
+                font-size: 13px;
+                font-weight: 700;
+            }
+        }
+    }
+    .activeNav{
+        left: 0;
+    }
+
+    @media (min-width: 481px) {
+        .logo{
+
+            margin-left: $navMarginDesktop;
+            // width: 190px;
+        }
+
+        .hamburgerContainer{
+            display: none;
+        }
+
+        ul{
+            margin-right: $navMarginDesktop;
+            position: static;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            // background-color: rgba(184, 3, 3, 0.289);
+            font-size: 100%;
+            li{
+                // font-size: 18px;
+                font-size: 13px;
+
+                @media (min-width: 620px) {
+                    font-size: 15px;
+                }
+                @media (min-width: 750px) {
+                    font-size: 18px;
+                }
+            }
+            .line, .title, p, button, .activeLi::after{
+                display: none;
+            }
+        }
+
+    }
+}
