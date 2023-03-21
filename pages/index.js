@@ -5,6 +5,8 @@ import Nav from '../components/Nav'
 import Home from '../components/Home'
 import About from '../components/About';
 import Services from '../components/Services';
+import Gallery from '../components/Gallery';
+
 import Test from '../components/Test'
 
 
@@ -20,6 +22,7 @@ export default function Index() {
       <Home></Home>
       <About></About>
       <Services></Services>
+      <Gallery></Gallery>
       {/* <Test></Test> */}
       
     </>
