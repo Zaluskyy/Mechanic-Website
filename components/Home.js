@@ -7,7 +7,7 @@ import downIcon from '../public/images/icons/down.svg';
 export default function Home({children}){
     return(
         <div className={style.home}>
-            <Image className={style.bgImage} alt='Auto' src={backgroundImage}/>
+            <Image className={style.bgImage} alt='Auto' src={backgroundImage} priority/>
             <div className={style.overlay}></div>
             <div className={style.container}>
                 <div className={style.textContainer}>

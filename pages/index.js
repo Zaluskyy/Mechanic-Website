@@ -4,10 +4,12 @@ import variable from '../styles/variables.module.scss'
 import Nav from '../components/Nav'
 import Home from '../components/Home'
 import About from '../components/About';
+import Services from '../components/Services';
 import Test from '../components/Test'
 
 
 export default function Index() {
+
   return (
     <>
       <Head>
@@ -17,6 +19,7 @@ export default function Index() {
       <Nav></Nav>
       <Home></Home>
       <About></About>
+      <Services></Services>
       {/* <Test></Test> */}
       
     </>
