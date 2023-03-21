@@ -59,7 +59,7 @@ export default function Services({children}){
     const all = sliderWidth.element*3+sliderWidth.marginElement*6+sliderWidth.containerPadding*2
 
     useEffect(()=>{
-        console.log(topSliderContainerRef.current.clientWidth);
+        // console.log(topSliderContainerRef.current.clientWidth);
         topSliderContainerRef.current.scrollTo({
             left: (all-window.innerWidth)/2,
             behavior: "smooth",
