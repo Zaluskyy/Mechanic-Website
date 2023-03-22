@@ -1,5 +1,5 @@
 import style from './styles/About.module.scss';
-import downIcon from '../public/images/icons/down.svg';
+import downIcon from '../public/images/icons/buttons/down.svg';
 import Image from 'next/image';
 
 export default function About({children}){

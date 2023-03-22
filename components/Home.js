@@ -1,8 +1,8 @@
 import style from './styles/Home.module.scss'
 import Image from 'next/image';
 import backgroundImage from '../public/images/background.jpg';
-import callIcon from '../public/images/icons/call.svg';
-import downIcon from '../public/images/icons/down.svg';
+import callIcon from '../public/images/icons/buttons/call.svg';
+import downIcon from '../public/images/icons/buttons/down.svg';
 
 export default function Home({children}){
     return(

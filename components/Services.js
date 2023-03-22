@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, {useEffect, useRef} from 'react';
 
 
-import circleArrow from '../public/images/icons/circleArrow.svg';
+import circleArrow from '../public/images/icons/buttons/circleArrow.svg';
 
 import glassImg from '../public/images/icons/services/glass.svg'
 import sprayerImg from '../public/images/icons/services/sprayer.svg'

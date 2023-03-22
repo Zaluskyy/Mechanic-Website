@@ -17,28 +17,20 @@ export default function Gallery({children}){
 
     const getImageDiv = ()=>{
         let current = []
-        for (let i=0; i<6; i++){
+        for (let i=0; i<images.length; i++){
             current.push(
-                <div className={style.image}>
+                <div key={i} className={style.image}>
                     <Image alt='carImage' src={images[i]}/>
                 </div>
             )
         }
         return current
     }
-    // getImageDiv()
 
     return(
         <div className={style.gallery}>
-            {/* <div className={style.topBg}/> */}
             <div className={style.container}>
-            {getImageDiv()}
-                {/* <div className={style.image}></div>
-                <div className={style.image}></div>
-                <div className={style.image}></div>
-                <div className={style.image}></div>
-                <div className={style.image}></div>
-                <div className={style.image}></div> */}
+                {getImageDiv()}
             </div>
         </div>
     )
