@@ -61,8 +61,12 @@ export default function Contact({children}){
     return(
         <div className={style.contact}>
             <h3 className={style.title}>Skontaktuj się z nami</h3>
-            {getContacts()}
-            <Image alt='maps' src={mapsImg} className={style.maps}/>
+            <div className={style.elements}>
+                {getContacts()}
+            </div>
+            <div className={style.mapsContainer}>
+                <Image alt='maps' src={mapsImg} className={style.maps}/>
+            </div>
         </div>
     )
 }
