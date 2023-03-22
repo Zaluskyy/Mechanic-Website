@@ -29,6 +29,7 @@ export default function Gallery({children}){
 
     return(
         <div className={style.gallery}>
+            <div className={style.background}/>
             <div className={style.container}>
                 {getImageDiv()}
             </div>

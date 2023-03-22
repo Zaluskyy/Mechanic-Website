@@ -4,23 +4,19 @@
     width: 100vw;
     height: 100vh;
     height: 100svh;
-    background: url('../../public/images/gallery/galleryBackground.png');
-    background-size: cover;
-    object-fit: cover;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .topBg{
-        width: 100vw;
-        height: 50px;
-        background-color: $secondaryDarkColor;
+    
+    .background{
         position: absolute;
-        left: 0;
-        top: 0;
-        border-bottom-left-radius: 50%;
-        border-bottom-right-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: url('../../public/images/gallery/galleryBackground.png');
+        filter: blur(3px);
+        z-index: -1;
+        background-size: cover;
     }
 
     .container{
@@ -30,58 +26,34 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(6, 1fr);
         gap: 10px;
-        // grid-template-areas: 
-        // 'lt rt'
-        // 'lct rt'
-        // 'lct rc'
-        // 'lcb rc'
-        // 'b b'
-        // 'b b';
+        grid-template-areas: 
+        'tl tr'
+        'ctl tr'
+        'ctl cr'
+        'cbl cr'
+        'b b'
+        'b b';
 
         div.image{
             border: 1px solid $white;
 
             &:nth-child(1){
-                background-color: rebeccapurple;
-                grid-column: 1 / 2 ;
-                grid-row: 1/2;
-                
-                // grid-area: lt;
+                grid-area: tl;
             }
             &:nth-child(2){
-                background-color: black;
-                grid-column: 2/3;
-                grid-row: 1/3;
-                
-                // grid-area: rt;
+                grid-area: tr;
             }
             &:nth-child(3){
-                background-color: rosybrown;
-                grid-column: 1/2;
-                grid-row: 2/4;
-                
-                // grid-area: lct;
+                grid-area: ctl;
             }
             &:nth-child(4){
-                background-color: blue;
-                grid-column: 2/3;
-                grid-row: 3/5;
-                
-                // grid-area: rc;
+                grid-area: cr;
             }
             &:nth-child(5){
-                background-color: indianred;
-                grid-column: 1/2;
-                grid-row: 4/5;
-                
-                // grid-area: lcb;
+                grid-area: cbl;
             }
             &:nth-child(6){
-                background-color: khaki;
-                grid-column: 1/3;
-                grid-row: 5/7;
-                
-                // grid-area: b;
+                grid-area: b;
             }
 
             img{
@@ -93,4 +65,83 @@
 
     }
 
+    @media (min-width: 800px) {
+        .container{
+
+            width: 100%;
+            height: 100%;
+            padding: $navMarginDesktop;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 23% 23% 23% 23% ;
+            gap: 20px;
+
+            grid-template-areas: 
+            'tl tl tc tr'
+            'bl bl tc tr'
+            'bl bl cr cr'
+            'bl bl br br'
+            ;
+            div.image{
+
+                &:nth-child(1){
+                    grid-area: tl;
+                }
+                &:nth-child(2){
+                    grid-area: tc;
+                }
+                &:nth-child(3){
+                    grid-area: tr;
+                }
+                &:nth-child(4){
+                    grid-area: bl;
+                }
+                &:nth-child(5){
+                    grid-area: cr;
+                }
+                &:nth-child(6){
+                    grid-area: br;
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .container{
+            width: 100%;
+            height: 100%;
+            padding: $navMarginDesktop;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 31% 31% 31%;
+            gap: 30px;
+            grid-template-areas: 
+            'tl tc tr'
+            'bl tc br'
+            'bl bc br'
+            ;
+            
+            div.image{
+                border: 2px solid $white;
+
+                &:nth-child(1){
+                    grid-area: tr;
+                }
+                &:nth-child(2){
+                    grid-area: br;
+                }
+                &:nth-child(3){
+                    grid-area: bl;
+                }
+                &:nth-child(4){
+                    grid-area: tc;
+                }
+                &:nth-child(5){
+                    grid-area: tl;
+                }
+                &:nth-child(6){
+                    grid-area: bc;
+                }
+            }
+        }
+    }
 }
