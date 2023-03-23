@@ -1,0 +1,294 @@
+@import '../../styles/variables.module.scss';
+
+$fontSizeMobile: 21px;
+$fontSizeDesktop: 20px;
+$fontSizeDesktopMedium: 17px;
+$fontSizeDesktopSmall: 15px;
+
+.footer{
+    width: 100vw;
+    // height: 550px;
+    height: auto;
+    background-color: $dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        // height: 50%;
+        margin: 0 5px;
+        
+
+        h4{
+            font-size: 35px;
+            position: relative;
+
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $red500;
+            }
+        }
+    }
+
+    .name{
+        // background-color: red;
+        // display: none;
+        display: none;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        // height: 230px;
+
+        p{
+            max-width: 270px;
+            color: $PrimaryWhite;
+            // font-size: $fontSizeDesktop;
+        }
+
+        h3{
+            // font-size: 32px;
+            span{
+                // font-size: 32px;
+                color: $red;
+            }
+        }
+        .copyEmail{
+            // width: 300px;
+            // height: 40px;
+            // background-color: red;
+            display: flex;
+            justify-content: space-between;
+            .email{
+                // width: 260px;
+                height: 100%;
+                background-color: $PrimaryWhite;
+                color: #000;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 5px;
+                align-items: center;
+                // font-size: 20px;
+
+            }
+            .copy{
+                // width: 40px;
+                // height: 40px;
+                background-color: $red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: auto;
+                    height: 60%;
+                }
+            }
+
+        }
+    }
+    .contact{
+        height: 210px;
+        margin-bottom: 40px;
+        // background-color: red;
+        display: flex;
+        justify-content: space-between;
+        
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            span{
+                font-size: $fontSizeMobile;
+            }
+        }
+    }
+    .menu{
+        height: 258px;
+        display: flex;
+        justify-content: space-between;
+        // background-color: blueviolet;
+        // background-color: rebeccapurple;
+        ul{
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            // background-color: red;
+            li{
+                list-style: none;
+                font-size: $fontSizeMobile;
+            }
+            .active{
+                color: $red;
+            }
+        }
+    }
+
+
+    @media (min-width: 481px) {
+    
+        flex-direction: row;
+        height: 310px;
+        padding: 0;
+
+        section{
+            h4{
+                font-size: 23px;
+            }
+        }
+
+        .name{
+            max-width: 220px;
+            p{
+                font-size: $fontSizeDesktopSmall;
+            }
+            h3{
+                font-size: 23px;
+                span{
+                    font-size: 23px;
+                }
+            }
+            .copyEmail{
+                width: 210px;
+                height: 30px;
+                .email{
+                    width: 180px;
+                    font-size: $fontSizeDesktopSmall;
+                }
+                .copy{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .name{
+            display: flex;
+            height: 207px;
+        }
+
+        .contact{
+            margin-bottom: 0;
+            height: 207px;
+            align-items: flex-start;
+            div{
+                align-items: flex-start;
+                span{
+                    font-size: $fontSizeDesktopSmall;
+                }
+            }
+        }
+
+        .menu{
+            height: 207px;
+            align-items: flex-start;
+            ul{
+                align-items: flex-start;
+                li{
+                    font-size: $fontSizeDesktopSmall;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 550px) {
+
+
+        section{
+            h4{
+                font-size: 27px;
+            }
+        }
+
+        .name{
+            p{
+                font-size: $fontSizeDesktopMedium;
+            }
+            h3{
+                font-size: 27px;
+                span{
+                    font-size: 27px;
+                }
+            }
+            .copyEmail{
+                .email{
+                    font-size: $fontSizeDesktopMedium;
+                }
+            }
+        }
+        .contact{
+            div{
+                span{
+                    font-size: $fontSizeDesktopMedium;
+                }
+            }
+        }
+        .menu{
+            ul{
+                li{
+                    font-size: $fontSizeDesktopMedium;
+                }
+            }
+        }
+
+    }
+
+    @media (min-width: 850px) {
+
+
+        section{
+            h4{
+                font-size: 32px;
+            }
+        }
+
+        .name{
+            max-width: none;
+            p{
+                font-size: $fontSizeDesktop;
+            }
+            h3{
+                font-size: 32px;
+                span{
+                    font-size: 32px;
+                }
+            }
+            .copyEmail{
+                width: 300px;
+                height: 40px;
+                .email{
+                    width: 260px;
+                    font-size: 20px;
+                }
+                .copy{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .contact{
+            div{
+                span{
+                    font-size: $fontSizeDesktop;
+                }
+            }
+        }
+        .menu{
+            ul{
+                li{
+                    font-size: $fontSizeDesktop;
+                }
+            }
+        }
+    }
+}

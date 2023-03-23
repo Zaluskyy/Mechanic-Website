@@ -7,6 +7,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact'
+import Footer from '../components/Footer';
 
 import Test from '../components/Test'
 
@@ -25,6 +26,7 @@ export default function Index() {
       <Services></Services>
       <Gallery></Gallery>
       <Contact></Contact>
+      <Footer></Footer>
       {/* <Test></Test> */}
       
     </>

@@ -9,7 +9,7 @@
     // height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     // transition: .2s height;
     position: relative;
@@ -121,7 +121,7 @@
             }
 
             .buttonsContainer{
-                justify-content: start;
+                justify-content: flex-start;
 
                 button:first-child{
                     margin-right: 40px;
