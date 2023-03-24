@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './styles/Nav.module.scss';
 import Image from 'next/image'
 import logo from '../public/images/logo.svg'
@@ -6,7 +6,11 @@ import callIcon from '../public/images/icons/buttons/call.svg';
 
 export default function Nav({children}){
 
-    const [openNav, setOpenNav] = useState(false)
+    const [openNav, setOpenNav] = useState(true)
+
+    useEffect(()=>{
+        openNav?document.body.style.overflow = 'hidden': document.body.style.overflow = 'auto';
+    })
 
     return(
         <nav className={style.nav}>
