@@ -1,0 +1,45 @@
+[
+    {
+        "icon": "../images/icons/services/door.svg",
+        "title": "Usługi blacharskie",
+        "shortDescription": "Naprawy które mają na celu przywrócenie dawnego wyglądu i stanu auta",
+        "LongDescription": "Usługi blacharskie to naprawy blacharskie, które mają na celu przywrócenie dawnego wyglądu i stanu auta",
+        "extended": {
+            "title": ["Naprawy powypadkowe", "Naprawa skorodowanej karoserii"],
+            "description": [
+                "Nasz warsztat zajmuje się naprawami powypadkowymi czyli likwidacja szkód zarówno po niewielkich stłuczkach, jak i po poważniejszych kolizjach.",
+                "rdza to prawdziwa zmora kierowców, a dzięki profesjonalnej obsłudze warsztatu blacharskiego można z powodzeniem pozbyć się wszelkich śladów korozji na karoserii, poprawiając tym samym wygląd auta, a także zwiększając bezpieczeństwo użytkowania pojazdu"
+            ]
+        }
+    },
+    {
+        "icon": "../images/icons/services/sprayer.svg",
+        "title": "Usługi lakiernicze",
+        "shortDescription": "Malowanie całego auta i wybranych elementów pojazdu",
+        "LongDescription": "Polegające na lakierowaniu pojazdów, przy czym należy zaznaczyć tu, że usługa ta może dotyczyć nie tylko pokrycia całego nadwozia pojazdu wybranym lakierem, ale również malowania niektórych elementów. Proces ten ma miejsce w specjalnie do tego przeznaczonych warunkach"
+    },
+    {
+        "icon": "../images/icons/services/polisher.svg",
+        "title": "Renowacja powłoki lakierniczej",
+        "shortDescription": "Usuwamy nieestetyczne rysy i zmatowienia na powłoce lakieru auta",
+        "LongDescription": "Lśniący i zadbany lakier to wizytówka każdego samochodu. Usuwamy nieestetyczne rysy czy zmatowienia powstałe w wyniku codziennej eksploatacji."
+    },
+    {
+        "icon": "../images/icons/services/lamp.svg",
+        "title": "Polerowanie lamp",
+        "shortDescription": "Polerowanie lamp daje lepszą widoczność na drodze i poprawia estetykę auta",
+        "LongDescription": "Polerowanie lamp ma na celu zwiększenie bezpieczeństwa podczas jazdy nocą, daje lepszą widoczność na drodze oraz poprawia wygląd wizualny i estetyczny."
+    },
+    {
+        "icon": "../images/icons/services/glass.svg",
+        "title": "Wymiana szyb samochodowych",
+        "shortDescription": "W naszym warsztacie wymieniamy szyby, dostosowując się do indywidualnych potrzeb klienta",
+        "LongDescription": "Pęknięta czy też rozbita szyba może skutkować mandatem i zatrzymaniem dowodu rejestracyjnego przez policję. W naszym warsztacie wymieniamy szyby, dostosowując się do indywidualnych potrzeb klienta. Współpracujemy z producentami, którzy oferują bardzo dobrej jakości oryginalne szyby. Wstawiamy też zamienniki."
+    },
+    {
+        "icon": "../images/icons/services/drop.svg",
+        "title": "Mieszalnia farb samochodowych",
+        "shortDescription": "Dobieramy farbę idealnie pod kolor twojego auta",
+        "LongDescription": "Na miejscu posiadamy własną mieszalnię lakierów samochodowych firmy DeBeer. Jest to holenderska firma dostarczająca wysokiej jakości produkty lakiernicze. Na miejscu dorabiamy wszystkie lakiery: akryle, perły, metaliki nadające się do każdego samochodu, motocykla, maszyny rolniczej, przemysłowej a nawet roweru."
+    }
+]

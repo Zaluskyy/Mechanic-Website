@@ -1,51 +1,17 @@
 import style from './styles/Services.module.scss';
 import Image from 'next/image';
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 
-import circleArrow from '../public/images/icons/buttons/circleArrow.svg';
+import circleArrowIcon from '../public/images/icons/buttons/circleArrow.svg';
 
-import glassImg from '../public/images/icons/services/glass.svg'
-import sprayerImg from '../public/images/icons/services/sprayer.svg'
-import lampImg from '../public/images/icons/services/lamp.svg'
-import doorImg from '../public/images/icons/services/door.svg'
-import polisherImg from '../public/images/icons/services/polisher.svg'
-import dropImg from '../public/images/icons/services/drop.svg'
+import ServicePopUp from './ServicePopUp';
+
+import servicesJson from '../public/json/services.json';
 
 export default function Services({children}){
 
-    const servicesArrow = [
-        {
-            icon: doorImg,
-            title: 'Usługi blacharskie',
-            shortDescription: 'Naprawy które mają na celu przywrócenie dawnego wyglądu i stanu auta',
-        },
-        {
-            icon: sprayerImg,
-            title: 'Usługi lakiernicze',
-            shortDescription: 'Malowanie całego auta i wybranych elementów pojazdu ',
-        },
-        {
-            icon: polisherImg,
-            title: 'Renowacja powłoki lakierniczej',
-            shortDescription: 'Usuwamy nieestetyczne rysy i zmatowienia na powłoce lakieru auta',
-        },
-        {
-            icon: lampImg,
-            title: 'Polerowanie lamp',
-            shortDescription: 'Polerowanie lamp daje lepszą widoczność na drodze i poprawia estetykę auta',
-        },
-        {
-            icon: glassImg,
-            title: 'Wymiana szyb samochodowych',
-            shortDescription: 'W naszym warsztacie wymieniamy szyby, dostosowując się do indywidualnych potrzeb klienta.',
-        },
-        {
-            icon: dropImg,
-            title: 'Mieszalnia farb samochodowych',
-            shortDescription: 'Dobieramy farbę idealnie pod kolor twojego auta',
-        },
-    ]
+    const [popUp, setPopUp] = useState({open: false, number: 0})
     
     const topSliderContainerRef = useRef(null);
     const bottomSliderContainerRef = useRef(null);
@@ -59,7 +25,6 @@ export default function Services({children}){
     const all = sliderWidth.element*3+sliderWidth.marginElement*6+sliderWidth.containerPadding*2
 
     useEffect(()=>{
-        // console.log(topSliderContainerRef.current.clientWidth);
         topSliderContainerRef.current.scrollTo({
             left: (all-window.innerWidth)/2,
             behavior: "smooth",
@@ -70,15 +35,19 @@ export default function Services({children}){
           });
     }, [])
 
+    const openPopUp = (number)=>{
+        setPopUp(prev=>({...prev, open: true, number: number}))
+    }
+
     const service = (serviceNumber)=>{
         return(
             <div className={style.service}>
-                <Image className={style.icon} src={servicesArrow[serviceNumber].icon} alt='glassImg'/>
-                <h4>{servicesArrow[serviceNumber].title}</h4>
-                <p>{servicesArrow[serviceNumber].shortDescription}</p>
-                <button> 
+                <Image className={style.icon} src={servicesJson[serviceNumber].icon} alt='glassImg' width={30} height={30}/>
+                <h4>{servicesJson[serviceNumber].title}</h4>
+                <p>{servicesJson[serviceNumber].shortDescription}</p>
+                <button onClick={()=>openPopUp(serviceNumber)}> 
                     <span>Więcej</span>
-                    <Image src={circleArrow} alt='arrowIcon'/>
+                    <Image src={circleArrowIcon} alt='arrowIcon' width={30} height={30}/>
                 </button>
             </div>
         )
@@ -97,6 +66,8 @@ export default function Services({children}){
                 {service(1)}
                 {service(5)}
             </div>
+            {/* <ServicePopUp/> */}
+            {popUp.open?<ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} />: ''}
         </div>
     )
 }

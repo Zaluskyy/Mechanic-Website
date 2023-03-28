@@ -6,7 +6,7 @@ import callIcon from '../public/images/icons/buttons/call.svg';
 
 export default function Nav({children}){
 
-    const [openNav, setOpenNav] = useState(true)
+    const [openNav, setOpenNav] = useState(false)
 
     useEffect(()=>{
         openNav?document.body.style.overflow = 'hidden': document.body.style.overflow = 'auto';
