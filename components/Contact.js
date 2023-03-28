@@ -20,7 +20,8 @@ export default function Contact({children}){
             name: 'Numer telefonu',
             content: '+ 48 605-606-343',
             buttonText: 'Zadzwoń',
-            buttonIcon: buttonCallIcon
+            buttonIcon: buttonCallIcon,
+            href: 'tel: 605 606 343',
         },
         {
             icon: emailIcon,
@@ -28,6 +29,7 @@ export default function Contact({children}){
             content: 'danuta_zaluska@gmail.com',
             buttonText: 'Napisz do nas',
             buttonIcon: buttonEmailIcon,
+            href: 'mailto: danuta_zaluska@wp.pl'
         },
         {
             icon: locationIcon,
@@ -35,6 +37,7 @@ export default function Contact({children}){
             content: 'Ul. Piaskowa 8A',
             buttonText: 'Znajdź nas',
             buttonIcon: buttonLocationIcon,
+            href: 'https://goo.gl/maps/isiZgAE9ezVdcj3m8',
         },
     ]
 
@@ -48,10 +51,10 @@ export default function Contact({children}){
                     </div>
                     <h3>{contacts[i].name}</h3>
                     <h4>{contacts[i].content}</h4>
-                    <button>
+                    <a href={contacts[i].href} target='_blank'>
                         <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
                         <span>{contacts[i].buttonText}</span>
-                    </button>
+                    </a>
                 </div>
             )
         }
