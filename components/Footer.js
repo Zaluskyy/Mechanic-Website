@@ -1,14 +1,16 @@
 import style from './styles/Footer.module.scss'
 
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+
 import Image from 'next/image';
 
 import copyIcon from '../public/images/icons/copy.svg';
-import { useRef } from 'react';
+import { useState } from 'react';
+// import { useRef } from 'react';
 
 export default function Footer({children, setScrollTo}){
 
-    const copyEmailRef = useRef(null)
-
+    const [ copied, setCopied ] = useState(false)
 
     const scroll = (where)=>{
         setScrollTo(where)
@@ -20,12 +22,14 @@ export default function Footer({children, setScrollTo}){
                 <p>Warsztat samochodowy działający w Lubaczowie już 29 lat. </p>
                 <h3><span className={style.red}>Napisz</span> do nas</h3>
                 <div className={style.copyEmail}>
-                    <div className={style.email} ref={copyEmailRef}>
+                    <div className={style.email}>
                         danuta_zaluska@wp.pl
                     </div>
-                    <div className={style.copy}>
-                        <Image alt='copyIcon' src={copyIcon}/>
-                    </div>
+                    <CopyToClipboard text={"danuta_zaluska@wp.pl"} onCopy={()=>setCopied(true)}>
+                        <div className={style.copy} style={copied?{backgroundColor: '#F13C3C'}:{}}>
+                            <Image alt='copyIcon' src={copyIcon}/>
+                        </div>
+                    </CopyToClipboard>
                 </div>
             </section>
 
