@@ -9,7 +9,13 @@ import ServicePopUp from './ServicePopUp';
 
 import servicesJson from '../public/json/services.json';
 
-export default function Services({children}){
+export default function Services({children, setComponentsHeihgt}){
+
+    const servidesRef = useRef(null)
+
+    useEffect(()=>{
+        setComponentsHeihgt(prev=>({...prev, services: servidesRef.current.offsetHeight}))
+    }, [])
 
     const [popUp, setPopUp] = useState({open: false, number: 0})
     
@@ -54,7 +60,7 @@ export default function Services({children}){
     }
     
     return(
-        <div className={style.services}>
+        <div className={style.services} ref={servidesRef}>
             <h3 className={style.title}>Oferta</h3>
             <div className={style.topSliderContainer} ref={topSliderContainerRef}>
                 {service(2)}

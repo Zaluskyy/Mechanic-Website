@@ -8,10 +8,15 @@ import image3 from '../public/images/gallery/3.jpg'
 import image4 from '../public/images/gallery/4.jpg'
 import image5 from '../public/images/gallery/5.jpg'
 import image6 from '../public/images/gallery/6.jpg'
+import { useEffect, useRef } from 'react';
 
-export default function Gallery({children}){
+export default function Gallery({children, setComponentsHeihgt}){
 
-    // const image = <div className={style.image}/>
+    const galleryRef = useRef(null)
+
+    useEffect(()=>{
+        setComponentsHeihgt(prev=>({...prev, gallery: galleryRef.current.offsetHeight}))
+    }, [])
 
     const images = [image1, image2, image3, image4, image5, image6]
 
@@ -28,7 +33,7 @@ export default function Gallery({children}){
     }
 
     return(
-        <div className={style.gallery}>
+        <div className={style.gallery} ref={galleryRef}>
             <div className={style.background}/>
             <div className={style.container}>
                 {getImageDiv()}
