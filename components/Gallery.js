@@ -8,11 +8,21 @@ import image3 from '../public/images/gallery/3.jpg'
 import image4 from '../public/images/gallery/4.jpg'
 import image5 from '../public/images/gallery/5.jpg'
 import image6 from '../public/images/gallery/6.jpg'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+import GalleryPopUp from './GalleryPopUp';
 
 export default function Gallery({children, setComponentsHeihgt}){
 
+    const [ openImage, setOpenImage ] = useState(false);
+    const [ selectedImage, setSelectedImage ] = useState(1);
+
     const galleryRef = useRef(null)
+
+    const getImage = (number)=>{
+        setOpenImage(true)
+        setSelectedImage(number)
+    }
 
     useEffect(()=>{
         setComponentsHeihgt(prev=>({...prev, gallery: galleryRef.current.offsetHeight}))
@@ -24,7 +34,7 @@ export default function Gallery({children, setComponentsHeihgt}){
         let current = []
         for (let i=0; i<images.length; i++){
             current.push(
-                <div key={i} className={style.image}>
+                <div key={i} onClick={()=>getImage(i)} className={style.image}>
                     <Image alt='carImage' src={images[i]}/>
                 </div>
             )
@@ -38,6 +48,7 @@ export default function Gallery({children, setComponentsHeihgt}){
             <div className={style.container}>
                 {getImageDiv()}
             </div>
+            {openImage?<GalleryPopUp images={images} selectedImage={selectedImage} setSelectedImage={setSelectedImage} setOpenImage={setOpenImage}/>:''}
         </div>
     )
 }
