@@ -6,7 +6,13 @@ import callIcon from '../public/images/icons/buttons/call.svg';
 
 import servicesJson from '../public/json/services.json';
 
-export default function ServicePopUp({children, setPopUp, number, extended}){
+export default function ServicePopUp({children, setPopUp, number, extended, setScrollTo, setScrollChanged}){
+
+    const scroll = (where)=>{
+        setScrollTo(where)
+        setScrollChanged(prev=>prev+=1)
+        setPopUp(prev=>({...prev, open: false}))
+    }
 
     const [animate, setAnimate] = useState(false)
     const [fontP, setFontP] = useState(17)
@@ -47,7 +53,7 @@ export default function ServicePopUp({children, setPopUp, number, extended}){
                 </ul>
             ):''}
 
-            <button>
+            <button onClick={()=>scroll('CONTACT')}>
                 <Image src={callIcon} alt='callImg' />
                 <span>Skontaktuj się z nami</span>
             </button>

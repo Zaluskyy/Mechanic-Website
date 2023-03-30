@@ -4,7 +4,7 @@ import Image from 'next/image'
 import logo from '../public/images/logo.svg'
 import callIcon from '../public/images/icons/buttons/call.svg';
 
-export default function Nav({children, setComponentsHeihgt, setScrollTo}){
+export default function Nav({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
     const navRef = useRef(null)
 
@@ -23,6 +23,7 @@ export default function Nav({children, setComponentsHeihgt, setScrollTo}){
     const scroll = (where)=>{
         setOpenNav(false)
         setScrollTo(where)
+        setScrollChanged(prev=>prev+=1)
     }
 
     return(

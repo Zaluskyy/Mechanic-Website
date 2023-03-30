@@ -9,7 +9,9 @@ import ServicePopUp from './ServicePopUp';
 
 import servicesJson from '../public/json/services.json';
 
-export default function Services({children, setComponentsHeihgt}){
+export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
+
+    
 
     const servidesRef = useRef(null)
 
@@ -73,7 +75,7 @@ export default function Services({children, setComponentsHeihgt}){
                 {service(5)}
             </div>
             {/* <ServicePopUp/> */}
-            {popUp.open?<ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} />: ''}
+            {popUp.open?<ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} setScrollTo={setScrollTo} setScrollChanged={setScrollChanged} />: ''}
         </div>
     )
 }

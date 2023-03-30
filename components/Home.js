@@ -5,7 +5,7 @@ import callIcon from '../public/images/icons/buttons/call.svg';
 import downIcon from '../public/images/icons/buttons/down.svg';
 import { useEffect, useRef } from 'react';
 
-export default function Home({children, setComponentsHeihgt, setScrollTo}){
+export default function Home({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
     const homeRef = useRef(null)
 
@@ -15,6 +15,7 @@ export default function Home({children, setComponentsHeihgt, setScrollTo}){
 
     const scroll = (where)=>{
         setScrollTo(where)
+        setScrollChanged(prev=>prev+=1)
     }
 
     return(

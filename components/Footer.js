@@ -8,12 +8,13 @@ import copyIcon from '../public/images/icons/copy.svg';
 import { useState } from 'react';
 // import { useRef } from 'react';
 
-export default function Footer({children, setScrollTo}){
+export default function Footer({children, setScrollTo, setScrollChanged}){
 
     const [ copied, setCopied ] = useState(false)
 
     const scroll = (where)=>{
         setScrollTo(where)
+        setScrollChanged(prev=>prev+=1)
     }
     return(
         <footer className={style.footer}>
@@ -26,9 +27,9 @@ export default function Footer({children, setScrollTo}){
                         danuta_zaluska@wp.pl
                     </div>
                     <CopyToClipboard text={"danuta_zaluska@wp.pl"} onCopy={()=>setCopied(true)}>
-                        <div className={style.copy} style={copied?{backgroundColor: '#F13C3C'}:{}}>
+                        <button className={style.copy} style={copied?{backgroundColor: '#F13C3C'}:{}}>
                             <Image alt='copyIcon' src={copyIcon}/>
-                        </div>
+                        </button>
                     </CopyToClipboard>
                 </div>
             </section>

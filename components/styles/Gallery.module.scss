@@ -35,6 +35,7 @@
         'b b';
 
         div.image{
+            cursor: pointer;
             border: 1px solid $white;
 
             &:nth-child(1){

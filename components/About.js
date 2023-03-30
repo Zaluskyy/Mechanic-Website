@@ -3,7 +3,7 @@ import downIcon from '../public/images/icons/buttons/down.svg';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
-export default function About({children, setComponentsHeihgt, setScrollTo}){
+export default function About({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
     const aboutRef = useRef(null)
 
@@ -13,6 +13,7 @@ export default function About({children, setComponentsHeihgt, setScrollTo}){
 
     const scroll =(where)=>{
         setScrollTo(where)
+        setScrollChanged(prev=>prev+=1)
     }
     return(
         <div className={style.about} ref={aboutRef}>

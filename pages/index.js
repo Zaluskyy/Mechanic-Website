@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from 'react'
 export default function Index() {
 
   const [ scrollTo, setScrollTo ] = useState('')
+  const [ scrollChanged, setScrollChanged ] = useState(0)
 
   const [ componentsHeihgt, setComponentsHeihgt ] = useState({
     nav: 0,
@@ -36,16 +37,16 @@ export default function Index() {
     
     document.body.scrollTo({
       top,
-      // behavior: 'smooth',
-      behavior: 'auto',
+      behavior: 'smooth',
+      // behavior: 'auto',
     })
-    setScrollTo(''); 
+    // setScrollTo(''); 
   }
 
   useEffect(()=>{
 
     scroll()
-  }, [scrollTo])
+  }, [scrollChanged])
 
   return (
     <>
@@ -53,13 +54,28 @@ export default function Index() {
         <title>Tadeo Zaluskyyy</title>
         
       </Head>
-      <Nav setComponentsHeihgt={setComponentsHeihgt} setScrollTo={setScrollTo} ></Nav>
-      <Home setComponentsHeihgt={setComponentsHeihgt} setScrollTo={setScrollTo} ></Home>
-      <About setComponentsHeihgt={setComponentsHeihgt} setScrollTo={setScrollTo} ></About>
-      <Services setComponentsHeihgt={setComponentsHeihgt} ></Services>
-      <Gallery setComponentsHeihgt={setComponentsHeihgt} ></Gallery>
+      <Nav 
+      setComponentsHeihgt={setComponentsHeihgt} 
+      setScrollTo={setScrollTo} 
+      setScrollChanged={setScrollChanged} ></Nav>
+      <Home 
+      setComponentsHeihgt={setComponentsHeihgt} 
+      setScrollTo={setScrollTo} 
+      setScrollChanged={setScrollChanged} ></Home>
+      <About 
+      setComponentsHeihgt={setComponentsHeihgt} 
+      setScrollTo={setScrollTo} 
+      setScrollChanged={setScrollChanged} ></About>
+      <Services 
+      setComponentsHeihgt={setComponentsHeihgt}
+      setScrollTo={setScrollTo} 
+      setScrollChanged={setScrollChanged} ></Services>
+      <Gallery 
+      setComponentsHeihgt={setComponentsHeihgt} ></Gallery>
       <Contact></Contact>
-      <Footer setScrollTo={setScrollTo} ></Footer>
+      <Footer 
+      setScrollTo={setScrollTo} 
+      setScrollChanged={setScrollChanged} ></Footer>
       {/* <Test></Test> */}
       
     </>

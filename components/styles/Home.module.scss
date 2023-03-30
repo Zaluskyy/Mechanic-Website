@@ -79,20 +79,30 @@
                 padding: 19px 11px;
                 border-radius: 10px;
                 border: none;
+                // transition: .2s background;
+                cursor: pointer;
+                // color: $white;
                 img{
                     width: 14px;
                     height: auto;
                 }
                 span{
                     font-size: 14px;
+                    color: $white;
                 }
                 &:first-child{
                     width: 178px;
                     background-color: $red;
+                    &:hover{
+                        // background-color: $red500;
+                    }
                 }
                 &:last-child{
                     width: 125px;
                     background-color: $secondaryDarkColor;
+                    &:hover{
+                        // background-color: $dark;
+                    }
                 }
             }
         }
