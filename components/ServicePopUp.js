@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import style from './styles/ServicePopUp.module.scss';
 import Image from 'next/image';
 
-import callIcon from '../public/images/icons/buttons/call.svg';
+import { motion } from 'framer-motion';
 
+import callIcon from '../public/images/icons/buttons/call.svg';
 import servicesJson from '../public/json/services.json';
+import { dropIn, exitAnimation, openPopUp, variantOne } from './AnimationVariants';
 
 export default function ServicePopUp({children, setPopUp, number, extended, setScrollTo, setScrollChanged}){
 
@@ -32,7 +34,15 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
     }, [])
 
     return(
-        <div className={style.popUp}>
+        <motion.div 
+        className={style.popUp}
+
+        variants={openPopUp}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+
+        >
             <h3>{servicesJson[number].title}</h3>
             <article style={extended?{height: '30%'}:{height: '60%'}}>
                 <Image className={style.icon} src={servicesJson[number].icon} alt='glassImg' width={30} height={30}/>
@@ -58,9 +68,20 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
                 <span>Skontaktuj się z nami</span>
             </button>
 
-            <div className={animate?`${style.close} ${style.animate}`:style.close} onClick={()=>setPopUp(prev=>({...prev, open: false}))}>
+            <motion.div 
+            className={style.close} 
+            onClick={()=>setPopUp(prev=>({...prev, open: false}))}
+            variants={exitAnimation}
+            initial="hidden"
+            animate="visible"
+            whileHover={{
+                scale: 1.5,
+                backgroundColor: "#F13C3C",
+            }}
+
+            >
                 <div></div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }

@@ -2,8 +2,7 @@ import style from './styles/Services.module.scss';
 import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
 
-// import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation } from 'framer-motion';
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from './AnimationVariants';
 
 
@@ -56,8 +55,6 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
     
     const topSliderContainerRef = useRef(null);
     const bottomSliderContainerRef = useRef(null);
-
-    // const [ bottomVisible, setBottomVisible ] = useState(false)
 
     
 
@@ -121,8 +118,13 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
                 {service(1)}
                 {service(5)}
             </motion.div>
-            {/* <ServicePopUp/> */}
-            {popUp.open?<ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} setScrollTo={setScrollTo} setScrollChanged={setScrollChanged} />: ''}
+            <AnimatePresence
+            mode={'wait'}
+            initial={false}
+            onExitComplete={()=>null}
+            >
+                {popUp.open && <ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} setScrollTo={setScrollTo} setScrollChanged={setScrollChanged} />}
+            </AnimatePresence>
         </div>
     )
 }
