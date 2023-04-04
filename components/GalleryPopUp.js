@@ -6,9 +6,6 @@ import { useEffect } from 'react';
 export default function GalleryPopUp({children, images, selectedImage, setSelectedImage, setOpenImage}){
 
     useEffect(()=>{
-        document.addEventListener('mousedown', (e)=>{
-            console.log(e.key)
-        })
         document.body.style.overflow = 'hidden'
         return()=>{
             document.body.style.overflow = 'auto';

@@ -38,9 +38,7 @@ export default function Index() {
     document.body.scrollTo({
       top,
       behavior: 'smooth',
-      // behavior: 'auto',
     })
-    // setScrollTo(''); 
   }
 
   useEffect(()=>{
@@ -52,30 +50,35 @@ export default function Index() {
     <>
       <Head>
         <title>Tadeo Zaluskyyy</title>
-        
       </Head>
       <Nav 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
-      setScrollChanged={setScrollChanged} ></Nav>
+      setScrollChanged={setScrollChanged} 
+      ></Nav>
       <Home 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
-      setScrollChanged={setScrollChanged} ></Home>
+      setScrollChanged={setScrollChanged} 
+      ></Home>
       <About 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
-      setScrollChanged={setScrollChanged} ></About>
+      setScrollChanged={setScrollChanged} 
+      ></About>
       <Services 
       setComponentsHeihgt={setComponentsHeihgt}
       setScrollTo={setScrollTo} 
-      setScrollChanged={setScrollChanged} ></Services>
+      setScrollChanged={setScrollChanged} 
+      ></Services>
       <Gallery 
-      setComponentsHeihgt={setComponentsHeihgt} ></Gallery>
+      setComponentsHeihgt={setComponentsHeihgt} 
+      ></Gallery>
       <Contact></Contact>
       <Footer 
       setScrollTo={setScrollTo} 
-      setScrollChanged={setScrollChanged} ></Footer>
+      setScrollChanged={setScrollChanged} 
+      ></Footer>
       {/* <Test></Test> */}
       
     </>

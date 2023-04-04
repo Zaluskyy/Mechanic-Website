@@ -190,11 +190,13 @@ $fontSizeDesktopSmall: 15px;
                         position: absolute;
                         bottom: -1px;
                         left: 0;
-                        transform: scale(0);
-                        transition: .2s transform;
+                        transform: scaleX(0);
+                        transition: .2s ease transform;
+                        transform-origin: right;
                     }
                     &:hover::after{
-                        transform: scale(1);
+                        transform: scaleX(1);
+                        transform-origin: left;
                     }
                 }
             }

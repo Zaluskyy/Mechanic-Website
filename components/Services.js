@@ -2,6 +2,10 @@ import style from './styles/Services.module.scss';
 import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
 
+// import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
+import { variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from './AnimationVariants';
+
 
 import circleArrowIcon from '../public/images/icons/buttons/circleArrow.svg';
 
@@ -11,18 +15,51 @@ import servicesJson from '../public/json/services.json';
 
 export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
-    
-
-    const servidesRef = useRef(null)
+    const servicesRef = useRef(null)
+    const controlTop = useAnimation();
+    const controlBottom = useAnimation();
+    const [ topVisible, setTopVisible ] = useState(false)
+    const [ bottomVisible, setBottomVisible ] = useState(false)
 
     useEffect(()=>{
-        setComponentsHeihgt(prev=>({...prev, services: servidesRef.current.offsetHeight}))
+        controlTop.start("hidden")
+        controlBottom.start("hidden")
+    }, [])
+    
+    useEffect(()=>{
+        topVisible && controlTop.start("visible")
+    }, [topVisible])
+    useEffect(()=>{
+        bottomVisible && controlBottom.start("visible")
+    }, [bottomVisible])
+
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entries)=>{
+            const entry = entries[0]
+            setTopVisible(entry.isIntersecting)
+        })
+        observer.observe(topSliderContainerRef.current)
+    }, [])
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entries)=>{
+            const entry = entries[0]
+            setBottomVisible(entry.isIntersecting)
+        })
+        observer.observe(bottomSliderContainerRef.current)
+    }, [])
+
+    useEffect(()=>{
+        setComponentsHeihgt(prev=>({...prev, services: servicesRef.current.offsetHeight}))
     }, [])
 
     const [popUp, setPopUp] = useState({open: false, number: 0})
     
     const topSliderContainerRef = useRef(null);
     const bottomSliderContainerRef = useRef(null);
+
+    // const [ bottomVisible, setBottomVisible ] = useState(false)
+
+    
 
     const sliderWidth = {
         containerPadding: 20,
@@ -62,18 +99,28 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
     }
     
     return(
-        <div className={style.services} ref={servidesRef}>
+        <div className={style.services} ref={servicesRef}>
             <h3 className={style.title}>Oferta</h3>
-            <div className={style.topSliderContainer} ref={topSliderContainerRef}>
+            <motion.div 
+            className={style.topSliderContainer} 
+            ref={topSliderContainerRef}
+            variants={variantFive}
+            animate={controlTop}
+            >
                 {service(2)}
                 {service(0)}
                 {service(3)}
-            </div>
-            <div className={style.bottomSliderContainer} ref={bottomSliderContainerRef}>
+            </motion.div>
+            <motion.div 
+            className={style.bottomSliderContainer} 
+            ref={bottomSliderContainerRef}
+            variants={variantThree}
+            animate={controlBottom}
+            >
                 {service(4)}
                 {service(1)}
                 {service(5)}
-            </div>
+            </motion.div>
             {/* <ServicePopUp/> */}
             {popUp.open?<ServicePopUp setPopUp={setPopUp} number={popUp.number} extended={popUp.number==0} setScrollTo={setScrollTo} setScrollChanged={setScrollChanged} />: ''}
         </div>

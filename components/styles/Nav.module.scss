@@ -119,13 +119,16 @@
                 height: 2px;
                 background-color: $red;
                 width: 100%;
-                transform: scale(0);
+                transform: scaleX(0);
                 border-radius: 10px;
-                transition: .2s ease-in-out transform;
+                transition: .2s ease transform;
+                transform-origin: right;
             }
-
+            
             &:hover::before{
-                transform: scale(1);
+                // transition: .2s ease transform;
+                transform: scaleX(1);
+                transform-origin: left;
             }
 
         }
