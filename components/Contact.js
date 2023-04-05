@@ -2,6 +2,9 @@ import style from './styles/Contact.module.scss';
 
 import Image from 'next/image';
 
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
+
 import callIcon from '../public/images/icons/contact/call.svg'
 import emailIcon from '../public/images/icons/contact/email.svg'
 import locationIcon from '../public/images/icons/contact/location.svg'
@@ -11,8 +14,27 @@ import buttonLocationIcon from '../public/images/icons/contact/buttonLocation.sv
 import buttonEmailIcon from '../public/images/icons/contact/buttonEmail.svg';
 
 import mapsImg from '../public/images/mapsImg.png';
+import { slide, variantOne, variantThree, variantTwo } from './AnimationVariants';
+import { useEffect } from 'react';
 
 export default function Contact({children}){
+
+    const { ref: contactRef, inView: contactVisible } = useInView();
+    const { ref: mapRef, inView: mapVisible } = useInView();
+
+    const controlContact = useAnimation();
+    const controlMap = useAnimation();
+
+    useEffect(()=>{
+        controlContact.start("hidden")
+        controlMap.start("hidden")
+    }, [])
+    useEffect(()=>{
+        contactVisible && controlContact.start("visible")
+    }, [contactVisible])
+    useEffect(()=>{
+        mapVisible && controlMap.start("visible")
+    }, [mapVisible])
 
     const contacts = [
         {
@@ -41,11 +63,23 @@ export default function Contact({children}){
         },
     ]
 
+    const getVariant = (number)=>{
+        if(number==0) return variantOne
+        else if(number==1) return variantTwo
+        else if(number==2) return variantThree
+    }
+
     const getContacts = ()=>{
         let current = []
         for(let i=0; i<contacts.length; i++){
             current.push(
-                <div className={style.container} key={contacts[i].name}>
+                <motion.div 
+                className={style.container} 
+                key={contacts[i].name}
+                animate={controlContact}
+                // variants={variantOne}
+                variants={getVariant(i)}
+                >
                     <div className={style.imageContainer}>
                         <Image alt={`${contacts[i].title} image`} src={contacts[i].icon}/>
                     </div>
@@ -55,7 +89,7 @@ export default function Contact({children}){
                         <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
                         <span>{contacts[i].buttonText}</span>
                     </a>
-                </div>
+                </motion.div>
             )
         }
         return current
@@ -63,13 +97,18 @@ export default function Contact({children}){
 
     return(
         <div className={style.contact}>
-            <h3 className={style.title}>Skontaktuj się z nami</h3>
+            <h3 className={style.title} ref={contactRef}>Skontaktuj się z nami</h3>
             <div className={style.elements}>
                 {getContacts()}
             </div>
-            <div className={style.mapsContainer}>
+            <motion.div 
+            className={style.mapsContainer}
+            ref={mapRef}
+            animate={controlMap}
+            variants={slide}
+            >
                 <Image alt='maps' src={mapsImg} className={style.maps}/>
-            </div>
+            </motion.div>
         </div>
     )
 }

@@ -225,26 +225,18 @@ export const appear6 = {
     }
 }
 
-// export const dropIn = {
-//     hidden: {
-//         y: "-100px",
-//         opacity: 0,
-//         scale: 0,
-//     },
-//     visible: {
-//         y: "0",
-//         opacity: 1,
-//         scale: 1,
-//         transition: {
-//             duration: 0.1,
-//             type: "spring",
-//             damping: 10,
-//             stiffness: 500,
-
-//         }
-//     },
-//     exit: {
-//         y: "100px",
-//         opacity: 0
-//     }
-// }
+export const slide = {
+    hidden: {
+        x: "-100px",
+        opacity: 0
+    },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            delay: .1,
+            type: 'spring',
+        }
+    }
+}
