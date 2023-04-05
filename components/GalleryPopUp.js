@@ -2,6 +2,8 @@ import style from './styles/GalleryPopUp.module.scss';
 import Image from 'next/image';
 import arrow from '../public/images/icons/buttons/down.svg'
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { openPopUp } from './AnimationVariants';
 
 export default function GalleryPopUp({children, images, selectedImage, setSelectedImage, setOpenImage}){
 
@@ -40,19 +42,60 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
     
     return(
         <div className={style.galleryPopUp}>
-            <div className={style.background} onClick={closePopUp} />
-            <div className={style.imgContainer}>
+            <motion.div 
+            className={style.background} 
+            onClick={closePopUp} 
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+
+
+            />
+            <motion.div 
+            className={style.imgContainer}
+            variants={openPopUp}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            >
                 <Image src={images[selectedImage]} alt='image'/>
-            </div>
-            <button className={style.leftArrow} onClick={()=>changeImage(false)}>
+            </motion.div>
+            <motion.button 
+            className={style.leftArrow} 
+            onClick={()=>changeImage(false)}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            whileHover={{
+                scale: 1.5
+            }}
+            >
                 <Image src={arrow} alt='leftArrow' />
-            </button>
-            <button className={style.rightArrow} onClick={changeImage}>
+            </motion.button>
+            <motion.button 
+            className={style.rightArrow} 
+            onClick={changeImage}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            whileHover={{
+                scale: 1.5
+            }}
+            >
                 <Image src={arrow} alt='rightArrow' />
-            </button>
-            <button className={style.exit} onClick={closePopUp}>
+            </motion.button>
+            <motion.button 
+            className={style.exit} 
+            onClick={closePopUp}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            whileHover={{
+                scale: 1.5
+            }}
+            >
                 <div/>
-            </button>
+            </motion.button>
             
         </div>
     )

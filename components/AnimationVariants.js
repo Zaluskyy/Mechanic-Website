@@ -134,6 +134,97 @@ export const exitAnimation = {
     }
 }
 
+
+export const appear1 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            type: 'spring',
+        }
+    }
+}
+export const appear2 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            delay: .1,
+            type: 'spring',
+        }
+    }
+}
+export const appear3 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            delay: .2,
+            type: 'spring',
+        }
+    }
+}
+export const appear4 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            delay: .3,
+            type: 'spring',
+        }
+    }
+}
+export const appear5 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            delay: .4,
+            type: 'spring',
+        }
+    }
+}
+export const appear6 = {
+    hidden: {
+        scale: 0,
+        opacity: 0,
+    },
+    visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: .2,
+            delay: .5,
+            type: 'spring',
+        }
+    }
+}
+
 // export const dropIn = {
 //     hidden: {
 //         y: "-100px",

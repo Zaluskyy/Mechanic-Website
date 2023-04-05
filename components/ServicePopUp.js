@@ -33,6 +33,17 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
         }
     }, [])
 
+    const handleKeyDown = (e)=>{
+        if(e.key == 'Escape') setPopUp(prev=>({...prev, open: false}))
+    }
+
+    useEffect(()=>{
+        window.addEventListener("keydown", handleKeyDown)
+        return ()=>{
+            window.removeEventListener("keydown", handleKeyDown)
+        }
+    })
+
     return(
         <motion.div 
         className={style.popUp}

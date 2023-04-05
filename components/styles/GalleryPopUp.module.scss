@@ -33,12 +33,14 @@
             object-fit: cover;
         }
     }
+
+    $buttonHeight: 30px;
     button{
         z-index: 3;
         position: absolute;
         
-        width: 30px;
-        height: 30px;
+        width: $buttonHeight;
+        height: $buttonHeight;
         border: 2px solid white;
         border-radius: 50%;
         background-color: black;
@@ -52,17 +54,17 @@
         }
     }
     button.leftArrow{
-        top: 50%;
+        top: calc(50% - $buttonHeight/2);
         left: 30px;
-        transform: translateY(-50%);
+        // transform: translateY(-50%);
         img{
             transform: rotate(90deg);
         }
     }
     button.rightArrow{
-        top: 50%;
+        top: calc(50% - $buttonHeight/2);
         right: 30px;
-        transform: translateY(-50%);
+        // transform: translateY(-50%);
         img{
             transform: rotate(-90deg);
         }
