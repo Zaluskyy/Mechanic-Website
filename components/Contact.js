@@ -17,6 +17,8 @@ import mapsImg from '../public/images/mapsImg.png';
 import { slide, variantOne, variantThree, variantTwo } from './AnimationVariants';
 import { useEffect } from 'react';
 
+import ButtonAnimation from './ButtonAnimation';
+
 export default function Contact({children}){
 
     const { ref: contactRef, inView: contactVisible } = useInView();
@@ -85,10 +87,13 @@ export default function Contact({children}){
                     </div>
                     <h3>{contacts[i].name}</h3>
                     <h4>{contacts[i].content}</h4>
-                    <a href={contacts[i].href} target='_blank'>
-                        <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
-                        <span>{contacts[i].buttonText}</span>
-                    </a>
+                    <ButtonAnimation>
+                        <a href={contacts[i].href} target='_blank'>
+                            <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
+                            <span>{contacts[i].buttonText}</span>
+                        </a>
+                    </ButtonAnimation>
+
                 </motion.div>
             )
         }

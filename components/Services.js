@@ -11,6 +11,7 @@ import circleArrowIcon from '../public/images/icons/buttons/circleArrow.svg';
 import ServicePopUp from './ServicePopUp';
 
 import servicesJson from '../public/json/services.json';
+import ButtonAnimation from './ButtonAnimation';
 
 export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
@@ -87,10 +88,10 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
                 <Image className={style.icon} src={servicesJson[serviceNumber].icon} alt='glassImg' width={30} height={30}/>
                 <h4>{servicesJson[serviceNumber].title}</h4>
                 <p>{servicesJson[serviceNumber].shortDescription}</p>
-                <button onClick={()=>openPopUp(serviceNumber)}> 
+                <ButtonAnimation onClick={()=>openPopUp(serviceNumber)}> 
                     <span>Więcej</span>
                     <Image src={circleArrowIcon} alt='arrowIcon' width={30} height={30}/>
-                </button>
+                </ButtonAnimation>
             </div>
         )
     }

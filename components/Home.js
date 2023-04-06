@@ -4,6 +4,7 @@ import backgroundImage from '../public/images/background.jpg';
 import callIcon from '../public/images/icons/buttons/call.svg';
 import downIcon from '../public/images/icons/buttons/down.svg';
 import { useEffect, useRef } from 'react';
+import ButtonAnimation from './ButtonAnimation';
 
 export default function Home({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
@@ -28,14 +29,14 @@ export default function Home({children, setComponentsHeihgt, setScrollTo, setScr
                     <h2>Usługi blacharsko-lakiernicze w Lubaczowie</h2>
                 </div>
                 <div className={style.buttonsContainer}>
-                    <button onClick={()=>scroll('CONTACT')} className={style.contactBtn}>
+                    <ButtonAnimation onClick={()=>scroll('CONTACT')} className={style.contactBtn}>
                         <Image alt='callIcon' src={callIcon}/>
                         <span>Skontaktuj się z nami</span>
-                    </button>
-                    <button onClick={()=>scroll('SERVICES')} className={style.offerBtn}>
+                    </ButtonAnimation>
+                    <ButtonAnimation onClick={()=>scroll('SERVICES')} className={style.offerBtn}>
                         <Image alt='downIcon' src={downIcon}/>
                         <span>Zobacz ofertę</span>
-                    </button>
+                    </ButtonAnimation>
                 </div>
             </div>
         </div>

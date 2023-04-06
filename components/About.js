@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import { variantOne, variantTwo, variantThree, variantFour, variantFive, variantSix } from './AnimationVariants';
+import ButtonAnimation from './ButtonAnimation';
 
 export default function About({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
@@ -69,13 +70,13 @@ export default function About({children, setComponentsHeihgt, setScrollTo, setSc
                 >
                 Firma Handlowo-Usługowa „Mechanika Pojazdowa” jest warsztatem samochodowym świadczącym usługi blacharsko-lakiernicze od 1994 r. Filarem naszej firmy jest doświadczenie i wiedza zdobywana na przestrzeni lat. W naszym warsztacie używamy profesjonalnego sprzętu i wysokiej jakości materiałów lakierniczych. Świadczymy fachowe doradztwo a wszelkie naprawy konsultujemy na bieżąco z naszymi klientami.
                 </motion.p>
-                <motion.button onClick={()=>scroll('GALLERY')}
+                <ButtonAnimation onClick={()=>scroll('GALLERY')}
                 variants={variantSix}
                 animate={controlBottom}
                 >
                     <Image alt='downIcon' src={downIcon}/>
                     <span>Zobacz galerię</span>
-                </motion.button>
+                </ButtonAnimation>
             </div>
         </div>
     )

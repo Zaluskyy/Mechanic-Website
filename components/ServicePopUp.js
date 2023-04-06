@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import callIcon from '../public/images/icons/buttons/call.svg';
 import servicesJson from '../public/json/services.json';
 import { dropIn, exitAnimation, openPopUp, variantOne } from './AnimationVariants';
+import ButtonAnimation from './ButtonAnimation';
 
 export default function ServicePopUp({children, setPopUp, number, extended, setScrollTo, setScrollChanged}){
 
@@ -74,10 +75,10 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
                 </ul>
             ):''}
 
-            <button onClick={()=>scroll('CONTACT')}>
+            <ButtonAnimation onClick={()=>scroll('CONTACT')}>
                 <Image src={callIcon} alt='callImg' />
                 <span>Skontaktuj się z nami</span>
-            </button>
+            </ButtonAnimation>
 
             <motion.div 
             className={style.close} 

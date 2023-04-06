@@ -113,10 +113,3 @@ a {
     color-scheme: dark;
   }
 }
-
-button, a{
-  transition: .2s filter;
-  &:hover{
-    filter: brightness(80%) invert(5%);
-  }
-}
