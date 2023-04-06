@@ -1,11 +1,14 @@
 import style from './styles/GalleryPopUp.module.scss';
 import Image from 'next/image';
 import arrow from '../public/images/icons/buttons/down.svg'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { openPopUp } from './AnimationVariants';
 
 export default function GalleryPopUp({children, images, selectedImage, setSelectedImage, setOpenImage}){
+
+    const leftArrowRef = useRef(null)
+    const rightArrowRef = useRef(null)
 
     useEffect(()=>{
         document.body.style.overflow = 'hidden'
@@ -18,7 +21,6 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
         setOpenImage(false)
     }
 
-    console.log(selectedImage);
 
     const changeImage = (toRight=true)=>{
         if(!toRight && selectedImage>0) setSelectedImage(prev=>prev-1)
@@ -28,9 +30,15 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
     }
 
     const handleKeyDown = (e)=>{
-        if(e.key == 'ArrowLeft') changeImage(false)
-        if(e.key == 'ArrowRight') changeImage(true)
-        if(e.key == 'Escape') closePopUp()
+        if(e.key == 'ArrowLeft') {
+            changeImage(false)
+            leftArrowRef.current.focus();
+        }
+        else if(e.key == 'ArrowRight'){
+            changeImage(true)
+            rightArrowRef.current.focus();
+        } 
+        else if(e.key == 'Escape') closePopUp()
     }
 
     useEffect(()=>{
@@ -61,6 +69,7 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
                 <Image src={images[selectedImage]} alt='image'/>
             </motion.div>
             <motion.button 
+            ref={leftArrowRef}
             className={style.leftArrow} 
             onClick={()=>changeImage(false)}
             initial={{opacity: 0}}
@@ -73,6 +82,7 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
                 <Image src={arrow} alt='leftArrow' />
             </motion.button>
             <motion.button 
+            ref={rightArrowRef}
             className={style.rightArrow} 
             onClick={changeImage}
             initial={{opacity: 0}}

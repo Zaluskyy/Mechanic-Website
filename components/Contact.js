@@ -87,7 +87,7 @@ export default function Contact({children}){
                     </div>
                     <h3>{contacts[i].name}</h3>
                     <h4>{contacts[i].content}</h4>
-                    <ButtonAnimation>
+                    <ButtonAnimation tabIndex={"-1"}>
                         <a href={contacts[i].href} target='_blank'>
                             <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
                             <span>{contacts[i].buttonText}</span>

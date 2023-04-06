@@ -40,11 +40,32 @@ export default function Nav({children, setComponentsHeihgt, setScrollTo, setScro
                 <div className={style.hamburger}></div>
             </div>
             <ul className={openNav?style.activeNav:''}>
-                <li onClick={()=>scroll('HOME')} className={style.activeLi}>Strona główna</li>
-                <li onClick={()=>scroll('ABOUT')}>O nas</li>
-                <li onClick={()=>scroll('SERVICES')}>Usługi</li>
-                <li onClick={()=>scroll('GALLERY')}>Galeria</li>
-                <li onClick={()=>scroll('CONTACT')}>Kontakt</li>
+                <li 
+                onClick={()=>scroll('HOME')} 
+                onKeyPress={()=>scroll('HOME')} 
+                className={style.activeLi}
+                tabIndex="1"
+                >Strona główna</li>
+                <li 
+                onClick={()=>scroll('ABOUT')}
+                onKeyPress={()=>scroll('ABOUT')}
+                tabIndex="2"
+                >O nas</li>
+                <li 
+                onClick={()=>scroll('SERVICES')}
+                onKeyPress={()=>scroll('SERVICES')}
+                tabIndex="3"
+                >Usługi</li>
+                <li 
+                onClick={()=>scroll('GALLERY')}
+                onKeyPress={()=>scroll('GALLERY')}
+                tabIndex="4"
+                >Galeria</li>
+                <li 
+                onClick={()=>scroll('CONTACT')}
+                onKeyPress={()=>scroll('CONTACT')}
+                tabIndex="5"
+                >Kontakt</li>
 
                     <li className={style.line}></li>
                     <li className={style.title}>Działamy już od 29 lat</li>

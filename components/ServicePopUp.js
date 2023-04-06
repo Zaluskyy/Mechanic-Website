@@ -17,12 +17,9 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
         setPopUp(prev=>({...prev, open: false}))
     }
 
-    const [animate, setAnimate] = useState(false)
     const [fontP, setFontP] = useState(17)
 
-
     useEffect(()=>{
-        setAnimate(true)
         if(window.innerWidth<481&&extended){
             setFontP(17)
         }else if(window.innerWidth<481&&!extended){
@@ -75,7 +72,11 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
                 </ul>
             ):''}
 
-            <ButtonAnimation onClick={()=>scroll('CONTACT')}>
+            <ButtonAnimation 
+            onClick={()=>scroll('CONTACT')}
+            onKeyPress={()=>scroll('CONTACT')}
+            
+            >
                 <Image src={callIcon} alt='callImg' />
                 <span>Skontaktuj się z nami</span>
             </ButtonAnimation>

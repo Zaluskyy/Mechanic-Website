@@ -50,11 +50,32 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
             <section className={style.menu}>
                 <h4>Menu</h4>
                 <ul>
-                    <li onClick={()=>scroll('HOME')}  className={style.active}>Strona główna</li>
-                    <li onClick={()=>scroll('ABOUT')} >O nas</li>
-                    <li onClick={()=>scroll('SERVICES')} >Usługi</li>
-                    <li onClick={()=>scroll('GALLERY')} >Galeria</li>
-                    <li onClick={()=>scroll('CONTACT')} >Kontakt</li>
+                    <li 
+                    onClick={()=>scroll('HOME')}  
+                    onKeyPress={()=>scroll('HOME')}  
+                    className={style.active}
+                    tabIndex="0"
+                    >Strona główna</li>
+                    <li 
+                    onClick={()=>scroll('ABOUT')} 
+                    onKeyPress={()=>scroll('ABOUT')} 
+                    tabIndex="0"
+                    >O nas</li>
+                    <li 
+                    onClick={()=>scroll('SERVICES')} 
+                    onKeyPress={()=>scroll('SERVICES')} 
+                    tabIndex="0"
+                    >Usługi</li>
+                    <li 
+                    onClick={()=>scroll('GALLERY')} 
+                    onKeyPress={()=>scroll('GALLERY')} 
+                    tabIndex="0"
+                    >Galeria</li>
+                    <li 
+                    onClick={()=>scroll('CONTACT')} 
+                    onKeyPress={()=>scroll('CONTACT')} 
+                    tabIndex="0"
+                    >Kontakt</li>
                 </ul>
             </section>
         </footer>

@@ -57,8 +57,6 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
     const topSliderContainerRef = useRef(null);
     const bottomSliderContainerRef = useRef(null);
 
-    
-
     const sliderWidth = {
         containerPadding: 20,
         marginElement: 5,

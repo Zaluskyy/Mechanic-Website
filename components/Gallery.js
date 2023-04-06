@@ -68,6 +68,7 @@ export default function Gallery({children, setComponentsHeihgt}){
                 <motion.div 
                 key={i} 
                 onClick={()=>getImage(i)} 
+                onKeyPress={()=>getImage(i)} 
                 className={style.image}
                 animate={control}
                 variants={getVariant(i)}
