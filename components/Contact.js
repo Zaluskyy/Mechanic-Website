@@ -2,6 +2,11 @@ import style from './styles/Contact.module.scss';
 
 import Image from 'next/image';
 
+import dynamic from 'next/dynamic';
+const MapWithNoSSR = dynamic(() => import('./Map'), {
+  ssr: false
+});
+
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -112,7 +117,8 @@ export default function Contact({children}){
             animate={controlMap}
             variants={slide}
             >
-                <Image alt='maps' src={mapsImg} className={style.maps}/>
+            <MapWithNoSSR/>
+                {/* <Image alt='maps' src={mapsImg} className={style.maps}/> */}
             </motion.div>
         </div>
     )
