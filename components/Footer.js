@@ -20,7 +20,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
         <footer className={style.footer}>
             <section className={style.name}>
                 <h4>Tadeusz Załuski</h4>
-                <p>Warsztat samochodowy działający w Lubaczowie już 29 lat. </p>
+                <p>Warsztat samochodowy działający w Lubaczowie już od 29 lat. </p>
                 <h3><span className={style.red}>Napisz</span> do nas</h3>
                 <div className={style.copyEmail}>
                     <div className={style.email}>
@@ -52,8 +52,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                 <ul>
                     <li 
                     onClick={()=>scroll('HOME')}  
-                    onKeyPress={()=>scroll('HOME')}  
-                    className={style.active}
+                    onKeyPress={()=>scroll('HOME')}
                     tabIndex="0"
                     >Strona główna</li>
                     <li 
@@ -73,7 +72,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                     >Galeria</li>
                     <li 
                     onClick={()=>scroll('CONTACT')} 
-                    onKeyPress={()=>scroll('CONTACT')} 
+                    onKeyPress={()=>scroll('CONTACT')}
                     tabIndex="0"
                     >Kontakt</li>
                 </ul>

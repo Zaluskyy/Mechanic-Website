@@ -2,8 +2,8 @@
 
 .services{
     width: 100vw;
-    height: 100vh;
-    height: 100svh;
+    height: 85vh;
+    height: 85svh;
     background-color: $secondaryDarkColor;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,10 @@
             background-color: $PrimaryWhite;
             border-radius: 12px;
         }
+    }
+
+    .bottomSliderContainer{
+        margin-bottom: 20px;
     }
 
 

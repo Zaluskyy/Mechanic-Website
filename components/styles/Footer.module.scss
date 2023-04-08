@@ -41,7 +41,7 @@ $fontSizeDesktopSmall: 15px;
 
     .name{
         display: none;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: flex-start;
 
         p{
@@ -102,24 +102,21 @@ $fontSizeDesktopSmall: 15px;
         display: flex;
         justify-content: space-between;
         ul{
-            height: 80%;
+            height: 75%;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-between;
             align-items: center;
             li{
                 cursor: pointer;
                 list-style: none;
                 font-size: $fontSizeMobile;
             }
-            .active{
-                color: $red;
-            }
         }
     }
 
 
-    @media (min-width: 481px) {
+    @media (min-width: 550px) {
     
         flex-direction: row;
         height: 310px;
@@ -127,19 +124,22 @@ $fontSizeDesktopSmall: 15px;
 
         section{
             h4{
-                font-size: 23px;
+                // font-size: 23px;
+                font-size: 27px;
             }
         }
 
         .name{
             max-width: 220px;
             p{
-                font-size: $fontSizeDesktopSmall;
+                font-size: $fontSizeDesktopMedium;
             }
             h3{
-                font-size: 23px;
+                // font-size: 23px;
+                font-size: 27px;
                 span{
-                    font-size: 23px;
+                    // font-size: 23px;
+                    font-size: 27px;
                 }
             }
             .copyEmail{
@@ -147,7 +147,8 @@ $fontSizeDesktopSmall: 15px;
                 height: 30px;
                 .email{
                     width: 180px;
-                    font-size: $fontSizeDesktopSmall;
+                    // font-size: $fontSizeDesktopSmall;
+                    font-size: $fontSizeDesktopMedium;
                 }
                 .copy{
                     width: 30px;
@@ -158,28 +159,30 @@ $fontSizeDesktopSmall: 15px;
 
         .name{
             display: flex;
-            height: 207px;
+            height: 230px;
         }
 
         .contact{
             margin-bottom: 0;
-            height: 207px;
+            height: 230px;
             align-items: flex-start;
             div{
                 align-items: flex-start;
                 span{
-                    font-size: $fontSizeDesktopSmall;
+                    // font-size: $fontSizeDesktopSmall;
+                    font-size: $fontSizeDesktopMedium;
                 }
             }
         }
 
         .menu{
-            height: 207px;
+            height: 230px;
             align-items: flex-start;
             ul{
                 align-items: flex-start;
                 li{
-                    font-size: $fontSizeDesktopSmall;
+                    // font-size: $fontSizeDesktopSmall;
+                    font-size: $fontSizeDesktopMedium;
                     position: relative;
                     
                     &::after{
@@ -201,48 +204,6 @@ $fontSizeDesktopSmall: 15px;
                 }
             }
         }
-    }
-
-    @media (min-width: 550px) {
-
-
-        section{
-            h4{
-                font-size: 27px;
-            }
-        }
-
-        .name{
-            p{
-                font-size: $fontSizeDesktopMedium;
-            }
-            h3{
-                font-size: 27px;
-                span{
-                    font-size: 27px;
-                }
-            }
-            .copyEmail{
-                .email{
-                    font-size: $fontSizeDesktopMedium;
-                }
-            }
-        }
-        .contact{
-            div{
-                span{
-                    font-size: $fontSizeDesktopMedium;
-                }
-            }
-        }
-        .menu{
-            ul{
-                li{
-                    font-size: $fontSizeDesktopMedium;
-                }
-            }
-        }
-
     }
 
     @media (min-width: 850px) {

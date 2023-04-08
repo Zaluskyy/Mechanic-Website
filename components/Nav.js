@@ -16,6 +16,19 @@ export default function Nav({children, setComponentsHeihgt, setScrollTo, setScro
     const [openNav, setOpenNav] = useState(false)
 
 
+    const handleResize = ()=>{
+        if(window.innerWidth>=620){
+            setOpenNav(false)
+        }
+    }
+
+    useEffect(()=>{
+        window.addEventListener('resize', handleResize)
+        return ()=>{
+            window.removeEventListener('resize', handleResize)
+        }
+    })
+
 
     useEffect(()=>{
         openNav?document.body.style.overflow = 'hidden': document.body.style.overflow = 'auto';

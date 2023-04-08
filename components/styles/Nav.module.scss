@@ -25,6 +25,7 @@
         img{
             height: 75%;
             width: auto;
+            margin-right: 5px;
         }
 
         h4{
@@ -170,6 +171,7 @@
 
             img{
                 width: 16px;
+                height: auto;
             }
 
             span{
@@ -184,7 +186,7 @@
         opacity: 1;
     }
 
-    @media (min-width: 481px) {
+    @media (min-width: 620px) {
         .logo{
 
             margin-left: $navMarginDesktop;
@@ -206,11 +208,7 @@
             visibility: visible;
             opacity: 1;
             li{
-                font-size: 13px;
-
-                @media (min-width: 620px) {
-                    font-size: 15px;
-                }
+                font-size: 15px;
                 @media (min-width: 750px) {
                     font-size: 18px;
                 }

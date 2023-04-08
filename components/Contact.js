@@ -18,7 +18,6 @@ import buttonCallIcon from '../public/images/icons/buttons/call.svg';
 import buttonLocationIcon from '../public/images/icons/contact/buttonLocation.svg';
 import buttonEmailIcon from '../public/images/icons/contact/buttonEmail.svg';
 
-import mapsImg from '../public/images/mapsImg.png';
 import { slide, variantOne, variantThree, variantTwo } from './AnimationVariants';
 import { useEffect } from 'react';
 
@@ -118,7 +117,6 @@ export default function Contact({children}){
             variants={slide}
             >
             <MapWithNoSSR/>
-                {/* <Image alt='maps' src={mapsImg} className={style.maps}/> */}
             </motion.div>
         </div>
     )

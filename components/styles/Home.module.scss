@@ -2,16 +2,12 @@
 
 .home{
     width: 100vw;
-    // height: 100vh;
-    // height: 100svh;
     height: calc(100vh - $navHeight);
     height: calc(100svh - $navHeight);
-    // height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    // transition: .2s height;
     position: relative;
 
     .bgImage{
@@ -54,14 +50,11 @@
             h2{
                 width: 75%;
                 font-size: 18px;
-                // font-size: 20px;
                 color: $white;
                 opacity: .8;
                 font-weight: 400;
             }
         }
-
-
 
         .buttonsContainer{
             width: 100%;
@@ -79,9 +72,7 @@
                 padding: 19px 11px;
                 border-radius: 10px;
                 border: none;
-                // transition: .2s background;
                 cursor: pointer;
-                // color: $white;
                 img{
                     width: 14px;
                     height: auto;
@@ -93,16 +84,10 @@
                 &:first-child{
                     width: 178px;
                     background-color: $red;
-                    &:hover{
-                        // background-color: $red500;
-                    }
                 }
                 &:last-child{
                     width: 125px;
                     background-color: $secondaryDarkColor;
-                    &:hover{
-                        // background-color: $dark;
-                    }
                 }
             }
         }
@@ -190,6 +175,7 @@
         }
         .container{
             width: 490px;
+            margin-left: 50px;
             .textContainer{
                 width: 75%;
             }
