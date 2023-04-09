@@ -83,7 +83,7 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
     const service = (serviceNumber)=>{
         return(
             <div className={style.service}>
-                <Image className={style.icon} src={servicesJson[serviceNumber].icon} alt='glassImg' width={30} height={30}/>
+                <Image className={style.icon} src={servicesJson[serviceNumber].icon} alt={servicesJson[serviceNumber].alt} width={30} height={30}/>
                 <h4>{servicesJson[serviceNumber].title}</h4>
                 <p>{servicesJson[serviceNumber].shortDescription}</p>
                 <ButtonAnimation onClick={()=>openPopUp(serviceNumber)}> 

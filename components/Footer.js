@@ -28,7 +28,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                     </div>
                     <CopyToClipboard text={"danuta_zaluska@wp.pl"} onCopy={()=>setCopied(true)}>
                         <button className={style.copy} style={copied?{backgroundColor: '#F13C3C'}:{}}>
-                            <Image alt='copyIcon' src={copyIcon}/>
+                            <Image alt='Ikonka kopiowania' src={copyIcon}/>
                         </button>
                     </CopyToClipboard>
                 </div>

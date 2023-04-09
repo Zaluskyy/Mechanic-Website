@@ -54,7 +54,7 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
         >
             <h3>{servicesJson[number].title}</h3>
             <article style={extended?{height: '30%'}:{height: '60%'}}>
-                <Image className={style.icon} src={servicesJson[number].icon} alt='glassImg' width={30} height={30}/>
+                <Image className={style.icon} src={servicesJson[number].icon} alt={servicesJson[number].alt} width={30} height={30}/>
                 <p style={{fontSize: fontP}}
                 >{servicesJson[number].LongDescription}</p>
             </article>

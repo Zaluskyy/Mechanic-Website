@@ -66,7 +66,7 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
             animate="visible"
             exit="exit"
             >
-                <Image src={images[selectedImage]} alt='image'/>
+                <Image src={images[selectedImage]} alt='Zdjęcie'/>
             </motion.div>
             <motion.button 
             ref={leftArrowRef}
@@ -79,7 +79,7 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
                 scale: 1.5
             }}
             >
-                <Image src={arrow} alt='leftArrow' />
+                <Image src={arrow} alt='Zmień zdjęcie' />
             </motion.button>
             <motion.button 
             ref={rightArrowRef}
@@ -92,7 +92,7 @@ export default function GalleryPopUp({children, images, selectedImage, setSelect
                 scale: 1.5
             }}
             >
-                <Image src={arrow} alt='rightArrow' />
+                <Image src={arrow} alt='Zmień zdjęcie' />
             </motion.button>
             <motion.button 
             className={style.exit} 

@@ -87,13 +87,13 @@ export default function Contact({children}){
                 variants={getVariant(i)}
                 >
                     <div className={style.imageContainer}>
-                        <Image alt={`${contacts[i].title} image`} src={contacts[i].icon}/>
+                        <Image alt={contacts[i].name} src={contacts[i].icon}/>
                     </div>
                     <h3>{contacts[i].name}</h3>
                     <h4>{contacts[i].content}</h4>
                     <ButtonAnimation tabIndex={"-1"}>
                         <a href={contacts[i].href} target='_blank'>
-                            <Image alt={`${contacts[i].title} image`} src={contacts[i].buttonIcon}/>
+                            <Image alt={contacts[i].buttonText} src={contacts[i].buttonIcon}/>
                             <span>{contacts[i].buttonText}</span>
                         </a>
                     </ButtonAnimation>

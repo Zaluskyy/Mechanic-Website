@@ -78,7 +78,7 @@ export default function Gallery({children, setComponentsHeihgt, resized}){
                 }}
                 whileTap={{scale: .9}}
                 >
-                    <Image alt='carImage' src={images[i]}/>
+                    <Image alt='Zdjęcie' src={images[i]}/>
                 </motion.div>
             )
         }
