@@ -6,13 +6,13 @@ import downIcon from '../public/images/icons/buttons/down.svg';
 import { useEffect, useRef } from 'react';
 import ButtonAnimation from './ButtonAnimation';
 
-export default function Home({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
+export default function Home({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 
     const homeRef = useRef(null)
 
     useEffect(()=>{
         setComponentsHeihgt(prev=>({...prev, home: homeRef.current.offsetHeight}))
-    }, [])
+    }, [resized])
 
     const scroll = (where)=>{
         setScrollTo(where)

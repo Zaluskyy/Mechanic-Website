@@ -15,7 +15,7 @@ import { AnimatePresence, delay, motion, useAnimation } from 'framer-motion';
 import { appear, appear1, appear2, appear3, appear4, appear5, appear6, exitAnimation, openPopUp, variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from './AnimationVariants';
 
 
-export default function Gallery({children, setComponentsHeihgt}){
+export default function Gallery({children, setComponentsHeihgt, resized}){
 
     const [ openImage, setOpenImage ] = useState(false);
     const [ selectedImage, setSelectedImage ] = useState(1);
@@ -48,7 +48,7 @@ export default function Gallery({children, setComponentsHeihgt}){
 
     useEffect(()=>{
         setComponentsHeihgt(prev=>({...prev, gallery: galleryRef.current.offsetHeight}))
-    }, [])
+    }, [resized])
 
     const images = [image1, image2, image3, image4, image5, image6]
 

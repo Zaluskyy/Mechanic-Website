@@ -7,7 +7,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { variantOne, variantTwo, variantThree, variantFour, variantFive, variantSix } from './AnimationVariants';
 import ButtonAnimation from './ButtonAnimation';
 
-export default function About({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
+export default function About({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 
     const controlTop = useAnimation();
     const controlBottom = useAnimation();
@@ -34,7 +34,7 @@ export default function About({children, setComponentsHeihgt, setScrollTo, setSc
 
     useEffect(()=>{
         setComponentsHeihgt(prev=>({...prev, about: aboutRef.current.offsetHeight}))
-    }, [])
+    }, [resized])
 
     const scroll =(where)=>{
         setScrollTo(where)

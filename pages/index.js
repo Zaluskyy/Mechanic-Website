@@ -13,6 +13,18 @@ export default function Index() {
 
   const [ scrollTo, setScrollTo ] = useState('')
   const [ scrollChanged, setScrollChanged ] = useState(0)
+  const [ resized, setResized ] = useState(false)
+  
+  const handleResize = ()=>{
+    setResized(prev=>!prev)
+  }
+
+  useEffect(()=>{
+    window.addEventListener('resize', handleResize)
+    return ()=>{
+        window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const [ componentsHeihgt, setComponentsHeihgt ] = useState({
     nav: 0,
@@ -55,19 +67,23 @@ export default function Index() {
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
+      resized={resized}
       ></Home>
       <About 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
+      resized={resized}
       ></About>
       <Services 
       setComponentsHeihgt={setComponentsHeihgt}
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
+      resized={resized}
       ></Services>
       <Gallery 
       setComponentsHeihgt={setComponentsHeihgt} 
+      resized={resized}
       ></Gallery>
       <Contact></Contact>
       <Footer 

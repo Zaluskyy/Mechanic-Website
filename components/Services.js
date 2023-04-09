@@ -13,7 +13,7 @@ import ServicePopUp from './ServicePopUp';
 import servicesJson from '../public/json/services.json';
 import ButtonAnimation from './ButtonAnimation';
 
-export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
+export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 
     const servicesRef = useRef(null)
     const controlTop = useAnimation();
@@ -50,7 +50,7 @@ export default function Services({children, setComponentsHeihgt, setScrollTo, se
 
     useEffect(()=>{
         setComponentsHeihgt(prev=>({...prev, services: servicesRef.current.offsetHeight}))
-    }, [])
+    }, [resized])
 
     const [popUp, setPopUp] = useState({open: false, number: 0})
     
