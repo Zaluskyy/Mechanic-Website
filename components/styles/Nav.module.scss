@@ -165,7 +165,8 @@
             border-radius: 10px;
             border: none;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center
+            ;
             align-items: center;
             padding: 19px 11px;
 
@@ -175,6 +176,7 @@
             }
 
             span{
+                margin-left: 2px;
                 font-size: 13px;
                 font-weight: 700;
             }
