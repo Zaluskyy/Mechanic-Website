@@ -255,3 +255,24 @@ $fontSizeDesktopSmall: 15px;
         }
     }
 }
+
+.madeBy{
+    width: 100vw;
+    height: 40px;
+    background-color: $secondaryDarkColor;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: $navMarginMobile;
+    color: $white;
+    span{
+        font-size: 15px;
+        a{
+            font-size: 15px;
+            color: $red500;
+        }
+    }
+    @media (min-width: 550px) {
+        padding-right: $navMarginDesktop;
+    }
+}

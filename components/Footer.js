@@ -17,6 +17,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
         setScrollChanged(prev=>prev+=1)
     }
     return(
+        <>
         <footer className={style.footer}>
             <section className={style.name}>
                 <h4>Tadeusz Załuski</h4>
@@ -43,7 +44,7 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                 <div className={style.contacts}>
                     <span>Dane Kontaktowe</span>
                     <span>Telefon: 605 606 343</span>
-                    <span>Email: danuta_zaluska@gmail.com</span>
+                    <span>Email: danuta_zaluska@wp.pl</span>
                 </div>
             </section>
             
@@ -78,5 +79,9 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                 </ul>
             </section>
         </footer>
+        <div className={style.madeBy}>
+            <span>Made by <a href='https://www.linkedin.com/in/krystian-zaluski' target='_blank'>Krystian Załuski</a></span>
+        </div>
+        </>
     )
 }

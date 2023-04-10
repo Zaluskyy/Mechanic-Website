@@ -54,7 +54,7 @@ export default function Contact({children}){
         {
             icon: emailIcon,
             name: 'Adres email',
-            content: 'danuta_zaluska@gmail.com',
+            content: 'danuta_zaluska@wp.pl',
             buttonText: 'Napisz do nas',
             buttonIcon: buttonEmailIcon,
             href: 'mailto: danuta_zaluska@wp.pl'
