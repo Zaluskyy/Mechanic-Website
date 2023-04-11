@@ -62,6 +62,26 @@ export default function Index() {
     <>
       <Head>
         <title>Tadeusz Załuski</title>
+        <meta
+          name='author'
+          content='Krystian Załuski'
+        />
+        <meta
+          name='description'
+          content='Firma Handlowo-Usługowa „Mechanika Pojazdowa” jest warsztatem samochodowym świadczącym usługi blacharsko-lakiernicze od 1994 r.'
+        />
+        <meta
+          name='keywords'
+          content='blacharka, blacharnictwo, naprawa, mechanik, mechanika, lakiernik, lakiernictwo, warsztat, Załuski, Lubaczowskie, Lubaczowski, Lubaczowie, Lubaczów, Oleszyce, Cieszanów'
+        />
+        <meta
+          property='og:title'
+          content='Tadeusz Załuski - lakiernik samochodowy'
+        />
+        <meta
+          property='og:description'
+          content='Firma Handlowo-Usługowa „Mechanika Pojazdowa” jest warsztatem samochodowym świadczącym usługi blacharsko-lakiernicze od 1994 r.'
+        />
       </Head>
       <Nav 
       setComponentsHeihgt={setComponentsHeihgt} 

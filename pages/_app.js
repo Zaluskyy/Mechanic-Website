@@ -1,5 +1,4 @@
 import '@/styles/globals.scss'
-// import '@/styles/variables.module.scss'
 
 import { Play } from '@next/font/google'
 
