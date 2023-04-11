@@ -1,6 +1,6 @@
 import style from './styles/Home.module.scss'
 import Image from 'next/image';
-import backgroundImage from '../public/images/background.jpg';
+import backgroundImage from '../public/images/background.webp';
 import callIcon from '../public/images/icons/buttons/call.svg';
 import downIcon from '../public/images/icons/buttons/down.svg';
 import { useEffect, useRef } from 'react';

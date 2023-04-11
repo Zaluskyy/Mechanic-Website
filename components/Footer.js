@@ -4,12 +4,15 @@ import {CopyToClipboard} from 'react-copy-to-clipboard'
 
 import Image from 'next/image';
 
+import downArrow from '../public/images/icons/downArrow.svg'
+
 import copyIcon from '../public/images/icons/copy.svg';
 import { useState } from 'react';
 
 export default function Footer({children, setScrollTo, setScrollChanged}){
 
     const [ copied, setCopied ] = useState(false)
+    const [ tagsHidden, setTagsHidden ] = useState(true)
 
     const scroll = (where)=>{
         setScrollTo(where)
@@ -78,7 +81,31 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
                 </ul>
             </section>
         </footer>
-        <div className={style.madeBy}>
+        <div className={style.madeBy} style={tagsHidden?{overflow: 'hidden'}:{overflow: 'visible'}}>
+            <div className={style.tags}>
+                <div className={style.icon} onClick={()=>setTagsHidden(prev=>!prev)}>
+                    <Image src={downArrow} alt='Zobacz tagi' className={tagsHidden?'':style.animation}/>
+                </div>
+                <h6>Tagi:</h6>
+                <ul>
+                    <div>blacharz</div>
+                    <div>blacharka</div>
+                    <div>blacharnictwo</div>
+                    <div>naprawa</div>
+                    <div>mechanik</div>
+                    <div>mechanika</div>
+                    <div>lakiernik</div>
+                    <div>lakiernictwo</div>
+                    <div>warsztat</div>
+                    <div>Załuski</div>
+                    <div>Lubaczowskie</div>
+                    <div>Lubaczowski</div>
+                    <div>Lubaczowie</div>
+                    <div>Lubaczów</div>
+                    <div>Oleszyce</div>
+                    <div>Cieszanów</div>
+                </ul>
+            </div>
             <span>Made by <a href='https://www.linkedin.com/in/krystian-zaluski' target='_blank'>Krystian Załuski</a></span>
         </div>
         </>

@@ -259,6 +259,55 @@ $fontSizeDesktopSmall: 15px;
     align-items: center;
     padding-right: $navMarginMobile;
     color: $white;
+    position: relative;
+    // overflow: hidden;
+
+
+    .tags{
+        width: 100%;
+        // height: 200px;
+        // background-color: red;
+        position: absolute;
+        top: 0;
+        left: $navMarginMobile;
+        // transform: translateX(-50%);
+
+        .icon{
+            width: 40px;
+            height: 40px;
+            // background-color: rebeccapurple;
+            position: relative;
+            left: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 50%;
+                height: 50%;
+                object-fit: cover;
+                transition: .2s transform;
+            }
+            .animation{
+                transform: rotate(180deg);
+            }
+        }
+
+        h6{
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+        ul{
+            div{
+                float: left;
+                margin-right: 10px;
+                font-size: 15px;
+            }
+        }
+    }
+
+
     span{
         font-size: 15px;
         a{

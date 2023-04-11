@@ -2,17 +2,17 @@ import style from './styles/Gallery.module.scss';
 
 import Image from 'next/image';
 
-import image1 from '../public/images/gallery/1.jpg'
-import image2 from '../public/images/gallery/2.jpg'
-import image3 from '../public/images/gallery/3.jpg'
-import image4 from '../public/images/gallery/4.jpg'
-import image5 from '../public/images/gallery/5.jpg'
-import image6 from '../public/images/gallery/6.jpg'
+import image1 from '../public/images/gallery/1.webp'
+import image2 from '../public/images/gallery/2.webp'
+import image3 from '../public/images/gallery/3.webp'
+import image4 from '../public/images/gallery/4.webp'
+import image5 from '../public/images/gallery/5.webp'
+import image6 from '../public/images/gallery/6.webp'
 import { useEffect, useRef, useState } from 'react';
 
 import GalleryPopUp from './popUps/GalleryPopUp';
 import { AnimatePresence, delay, motion, useAnimation } from 'framer-motion';
-import { appear, appear1, appear2, appear3, appear4, appear5, appear6, exitAnimation, openPopUp, variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from '../UI/AnimationVariants';
+import { appear1, appear2, appear3, appear4, appear5, appear6 } from '../UI/AnimationVariants';
 
 
 export default function Gallery({children, setComponentsHeihgt, resized}){
