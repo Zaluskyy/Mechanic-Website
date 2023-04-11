@@ -6,7 +6,6 @@ import Image from 'next/image';
 
 import copyIcon from '../public/images/icons/copy.svg';
 import { useState } from 'react';
-// import { useRef } from 'react';
 
 export default function Footer({children, setScrollTo, setScrollChanged}){
 

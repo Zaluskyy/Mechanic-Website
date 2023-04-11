@@ -6,7 +6,7 @@ $fontSizeDesktopMedium: 17px;
 $fontSizeDesktopSmall: 15px;
 
 .footer{
-    width: 100vw;
+    width: 100%;
     height: auto;
     background-color: $dark;
     display: flex;
@@ -124,7 +124,6 @@ $fontSizeDesktopSmall: 15px;
 
         section{
             h4{
-                // font-size: 23px;
                 font-size: 27px;
             }
         }
@@ -135,10 +134,8 @@ $fontSizeDesktopSmall: 15px;
                 font-size: $fontSizeDesktopMedium;
             }
             h3{
-                // font-size: 23px;
                 font-size: 27px;
                 span{
-                    // font-size: 23px;
                     font-size: 27px;
                 }
             }
@@ -147,7 +144,6 @@ $fontSizeDesktopSmall: 15px;
                 height: 30px;
                 .email{
                     width: 180px;
-                    // font-size: $fontSizeDesktopSmall;
                     font-size: $fontSizeDesktopMedium;
                 }
                 .copy{
@@ -169,7 +165,6 @@ $fontSizeDesktopSmall: 15px;
             div{
                 align-items: flex-start;
                 span{
-                    // font-size: $fontSizeDesktopSmall;
                     font-size: $fontSizeDesktopMedium;
                 }
             }
@@ -181,7 +176,6 @@ $fontSizeDesktopSmall: 15px;
             ul{
                 align-items: flex-start;
                 li{
-                    // font-size: $fontSizeDesktopSmall;
                     font-size: $fontSizeDesktopMedium;
                     position: relative;
                     
@@ -257,7 +251,7 @@ $fontSizeDesktopSmall: 15px;
 }
 
 .madeBy{
-    width: 100vw;
+    width: 100%;
     height: 40px;
     background-color: $secondaryDarkColor;
     display: flex;

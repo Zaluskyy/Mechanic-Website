@@ -4,7 +4,7 @@ import backgroundImage from '../public/images/background.jpg';
 import callIcon from '../public/images/icons/buttons/call.svg';
 import downIcon from '../public/images/icons/buttons/down.svg';
 import { useEffect, useRef } from 'react';
-import ButtonAnimation from './ButtonAnimation';
+import ButtonAnimation from '../UI/ButtonAnimation';
 
 export default function Home({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 

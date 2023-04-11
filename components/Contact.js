@@ -18,10 +18,10 @@ import buttonCallIcon from '../public/images/icons/buttons/call.svg';
 import buttonLocationIcon from '../public/images/icons/contact/buttonLocation.svg';
 import buttonEmailIcon from '../public/images/icons/contact/buttonEmail.svg';
 
-import { slide, variantOne, variantThree, variantTwo } from './AnimationVariants';
+import { slide, variantOne, variantThree, variantTwo } from '../UI/AnimationVariants';
 import { useEffect } from 'react';
 
-import ButtonAnimation from './ButtonAnimation';
+import ButtonAnimation from '../UI/ButtonAnimation';
 
 export default function Contact({children}){
 
@@ -83,7 +83,6 @@ export default function Contact({children}){
                 className={style.container} 
                 key={contacts[i].name}
                 animate={controlContact}
-                // variants={variantOne}
                 variants={getVariant(i)}
                 >
                     <div className={style.imageContainer}>

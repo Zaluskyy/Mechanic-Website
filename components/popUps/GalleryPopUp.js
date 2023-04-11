@@ -1,9 +1,9 @@
-import style from './styles/GalleryPopUp.module.scss';
+import style from './GalleryPopUp.module.scss';
 import Image from 'next/image';
-import arrow from '../public/images/icons/buttons/down.svg'
+import arrow from '../../public/images/icons/buttons/down.svg'
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { openPopUp } from './AnimationVariants';
+import { openPopUp } from '../../UI/AnimationVariants';
 
 export default function GalleryPopUp({children, images, selectedImage, setSelectedImage, setOpenImage}){
 

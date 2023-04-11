@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import style from './styles/ServicePopUp.module.scss';
+import style from './ServicePopUp.module.scss';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
-import callIcon from '../public/images/icons/buttons/call.svg';
-import servicesJson from '../public/json/services.json';
-import { dropIn, exitAnimation, openPopUp, variantOne } from './AnimationVariants';
-import ButtonAnimation from './ButtonAnimation';
+import callIcon from '../../public/images/icons/buttons/call.svg';
+import servicesJson from '../../public/json/services.json';
+import { dropIn, exitAnimation, openPopUp, variantOne } from '../../UI/AnimationVariants';
+import ButtonAnimation from '../../UI/ButtonAnimation';
 
 export default function ServicePopUp({children, setPopUp, number, extended, setScrollTo, setScrollChanged}){
 
@@ -21,13 +21,13 @@ export default function ServicePopUp({children, setPopUp, number, extended, setS
 
     useEffect(()=>{
         if(window.innerWidth<481&&extended){
-            setFontP(17)
+            setFontP(15)
         }else if(window.innerWidth<481&&!extended){
             setFontP(20)
         }else if(window.innerWidth>=481&&extended){
-            setFontP(28)
+            setFontP(25)
         }else if(window.innerWidth>=481&&!extended){
-            setFontP(35)
+            setFontP(25)
         }
     }, [])
 

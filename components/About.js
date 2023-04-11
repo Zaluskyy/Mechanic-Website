@@ -4,8 +4,9 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
-import { variantOne, variantTwo, variantThree, variantFour, variantFive, variantSix } from './AnimationVariants';
-import ButtonAnimation from './ButtonAnimation';
+import { variantOne, variantTwo, variantThree, variantFour, variantFive, variantSix } from '../UI/AnimationVariants';
+import ButtonAnimation from '../UI/ButtonAnimation';
+
 
 export default function About({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 
@@ -26,7 +27,6 @@ export default function About({children, setComponentsHeihgt, setScrollTo, setSc
         bottomVisible && controlBottom.start("visible")
     }, [bottomVisible])
 
-    // console.log(topVisible);
     
     
     

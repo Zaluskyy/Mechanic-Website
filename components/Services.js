@@ -3,15 +3,15 @@ import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
 
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from './AnimationVariants';
+import { variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from "../UI/AnimationVariants";
 
 
 import circleArrowIcon from '../public/images/icons/buttons/circleArrow.svg';
 
-import ServicePopUp from './ServicePopUp';
+import ServicePopUp from './popUps/ServicePopUp';
 
 import servicesJson from '../public/json/services.json';
-import ButtonAnimation from './ButtonAnimation';
+import ButtonAnimation from '../UI/ButtonAnimation';
 
 export default function Services({children, setComponentsHeihgt, setScrollTo, setScrollChanged, resized}){
 

@@ -10,9 +10,9 @@ import image5 from '../public/images/gallery/5.jpg'
 import image6 from '../public/images/gallery/6.jpg'
 import { useEffect, useRef, useState } from 'react';
 
-import GalleryPopUp from './GalleryPopUp';
+import GalleryPopUp from './popUps/GalleryPopUp';
 import { AnimatePresence, delay, motion, useAnimation } from 'framer-motion';
-import { appear, appear1, appear2, appear3, appear4, appear5, appear6, exitAnimation, openPopUp, variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from './AnimationVariants';
+import { appear, appear1, appear2, appear3, appear4, appear5, appear6, exitAnimation, openPopUp, variantFive, variantFour, variantOne, variantSix, variantThree, variantTwo } from '../UI/AnimationVariants';
 
 
 export default function Gallery({children, setComponentsHeihgt, resized}){
@@ -72,7 +72,6 @@ export default function Gallery({children, setComponentsHeihgt, resized}){
                 className={style.image}
                 animate={control}
                 variants={getVariant(i)}
-                // variants={appear}
                 whileHover={{
                     scale: 1.05,
                 }}

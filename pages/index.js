@@ -10,7 +10,6 @@ import Footer from '../components/Footer';
 import { useEffect, useState } from 'react'
 
 export default function Index() {
-
   const [ scrollTo, setScrollTo ] = useState('')
   const [ scrollChanged, setScrollChanged ] = useState(0)
   const [ resized, setResized ] = useState(false)
@@ -42,14 +41,20 @@ export default function Index() {
     else if(scrollTo == 'GALLERY') top = componentsHeihgt.nav + componentsHeihgt.home + componentsHeihgt.about + componentsHeihgt.services;
     else if(scrollTo == 'CONTACT') top = componentsHeihgt.nav + componentsHeihgt.home + componentsHeihgt.about + componentsHeihgt.services + componentsHeihgt.gallery;
     
-    document.body.scrollTo({
-      top,
-      behavior: 'smooth',
-    })
+    if(navigator.userAgent.match(/firefox/i)){
+      window.scrollTo({
+        top,
+        behavior: 'smooth',
+      })
+    }else{
+      document.body.scrollTo({
+        top,
+        behavior: 'smooth',
+      })
+    }
   }
 
   useEffect(()=>{
-
     scroll()
   }, [scrollChanged])
 
@@ -62,35 +67,34 @@ export default function Index() {
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
-      ></Nav>
+      />
       <Home 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
       resized={resized}
-      ></Home>
+      />
       <About 
       setComponentsHeihgt={setComponentsHeihgt} 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
       resized={resized}
-      ></About>
+      />
       <Services 
       setComponentsHeihgt={setComponentsHeihgt}
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
       resized={resized}
-      ></Services>
+      />
       <Gallery 
       setComponentsHeihgt={setComponentsHeihgt} 
       resized={resized}
-      ></Gallery>
-      <Contact></Contact>
+      />
+      <Contact/>
       <Footer 
       setScrollTo={setScrollTo} 
       setScrollChanged={setScrollChanged} 
-      ></Footer>
-      
+      />
     </>
   )
 }

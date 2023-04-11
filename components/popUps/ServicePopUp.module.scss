@@ -1,7 +1,7 @@
 @import '../../styles/variables.module.scss';
 
 .popUp{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     height: 100dvh;
@@ -65,18 +65,18 @@
         height: 44%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
         li{
             list-style: none;
             h4{
-                font-size: 18px;
+                font-size: 20px;
                 font-weight: 700;
                 color: $PrimaryWhite;
                 margin-bottom: 2px;
             }
             p{
-                font-size: 16px;
+                font-size: 14px;
                 color: $PrimaryWhite;
             }
         }
@@ -112,11 +112,6 @@
             }
         }
     }
-    // .animate{
-    //     transition: .2s;
-    //     transform: rotate(90deg);
-
-    // }
     
     @media (min-width: 481px) {
         ul.extended{
@@ -156,7 +151,6 @@
             }
             p{
                 width: 60%;
-                font-size: 300px;
             }
         }
         button{

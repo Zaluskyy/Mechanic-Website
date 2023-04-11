@@ -3,7 +3,7 @@ import style from './styles/Nav.module.scss';
 import Image from 'next/image'
 import logo from '../public/images/logo.svg'
 import callIcon from '../public/images/icons/buttons/call.svg';
-import ButtonAnimation from './ButtonAnimation';
+import ButtonAnimation from '../UI/ButtonAnimation';
 
 export default function Nav({children, setComponentsHeihgt, setScrollTo, setScrollChanged}){
 
@@ -27,7 +27,7 @@ export default function Nav({children, setComponentsHeihgt, setScrollTo, setScro
         return ()=>{
             window.removeEventListener('resize', handleResize)
         }
-    })
+    }, [])
 
 
     useEffect(()=>{
