@@ -83,8 +83,10 @@ export default function Footer({children, setScrollTo, setScrollChanged}){
         </footer>
         <div className={style.madeBy} style={tagsHidden?{overflow: 'hidden'}:{overflow: 'visible'}}>
             <div className={style.tags}>
-                <div className={style.icon} onClick={()=>setTagsHidden(prev=>!prev)}>
-                    <Image src={downArrow} alt='Zobacz tagi' className={tagsHidden?'':style.animation}/>
+                <div className={style.icon} 
+                // onClick={()=>setTagsHidden(prev=>!prev)}
+                >
+                    {/* <Image src={downArrow} alt='Zobacz tagi' className={tagsHidden?'':style.animation}/> */}
                 </div>
                 <h6>Tagi:</h6>
                 <ul>
